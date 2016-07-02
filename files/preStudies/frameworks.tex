@@ -1,0 +1,80 @@
+\section{Frameworks}
+
+This section will evaluate different frameworks for cross-platform development which could be used in this project. Some \textit{must have} and \textit{nice to have} capabilities will be listed below.
+	
+\textbf{Must have:}
+	\begin{itemize}
+	\item Cross platform capabilities.
+	\item Wide community support.
+	\item \textit{Bluetooth Low Energy} capabilities.
+	\end{itemize}
+	
+\textbf{Nice to have:}
+	
+	\begin{itemize}
+	\item 1 platform both for web and apps.
+	\item Type safety.
+	\item Reactive data. Updated data in the database should reflect on the client.
+	\item Compiles to native code for increased performance.
+	\end{itemize}
+	
+
+\subsubsection{Meteor}
+
+\textbf{Language:} JavaScript
+\\
+\textbf{Description:}
+\\
+\textit{Meteor} is a platform and framework for developing both web applications as well as mobile applications. It comes with \textit{Cordova} built-in and is considered super fast for developing applications and prototyping. It comes with a lot of built-in tools and a package library for easy setup of things like account/user integration and login integrations of different kinds like Google and Facebook. It also comes with hot code push which is a tool for uploading new versions of your apps to the stores. \textit{Meteor} also have its own Command Line Interface which is very useful when developing. \textit{Meteor} also allowes you to write your backend in plain JavaScript. Out of the box it integrates with \textit{Mongo}, a document database for data storage. It also uses DDP (Distributed Data Protocol) for sending data between the client and the server. This data is reactive and will be updated at the clients when it changes.
+\\
+\textit{Meteor} comes with its own view layer named \textit{Blaze}. This can be substituted with \textit{React} or \textit{AngularJS} if either of them are preferred.
+
+\subsubsection{NativeScript}
+\textbf{Language:} JavaScript
+\\
+\textbf{Description:}
+\\
+\textit{NativeScript} uses a JavaScript toolchain to compile the JavaScript code into native APIs. This is a huge advantage because it makes the app work exactly like it was written natively without ever writing any native code or knowing about the native API’s. The markup is written in XML which is then styled with CSS.
+It is developed by Telerik, a big software company where you can opt-in for support through a paid license. It’s supported by Google and therefore works well with \textit{Angular} and TypeScript. With TypeScript, the \textit{nice to have} feature type safety is fulfilled. \textit{Bluetooth Low Energy} capabilities can be achieved with the Node.js package \textit{nativescript-bluetooth}, created by npm user eddyverbruggen. \textit{NativeScript} supports \textit{iOS}, \textit{Android}, \textit{Universal Windows Platform} and if \textit{Angular} is used it also supports building web applications \citep{preStudy:frameworks:nativescript}.
+
+
+\subsubsection{ReactNative}
+\textbf{Language:} JavaScript, Objective-C and Java
+\\
+\textbf{Description:}
+\\
+\textit{ReactNative} is a framework by Facebook, Inc. It extends the \textit{React} framework for building native apps. \textit{ReactNative} requires the developers to know Objective-C for \textit{iOS} development and Java for \textit{Android} development. This does not fulfill our requirement that it has to be cross-platform without the developers needing to know about the distinct platform languages and APIs.
+
+
+\subsubsection{Xamarin}
+\textbf{Language:} C\#
+\\
+\textbf{Description:}
+\\ 
+\textit{Xamarin} was recently purchased by Microsoft. It is a cross-platform framework for developing app for \textit{iOS}, \textit{Android}, \textit{Windows Phone} and \textit{Windows Universal Platform}. There are two main ways of developing with \textit{Xamarin}. \textit{Xamarin forms} which is the method that has the hightest amount of code-sharing between platforms. Estimated around 80-95\% code sharing depending on how specific the UI has to be. 
+\textit{Xamarin native} which has around 50-60\% code sharing. Mainly business login. UI Implementations differ. When using \textit{Xamarin native} it is a huge advantage to know about the native UI APIs.
+
+\subsubsection{Requirements summary}
+	
+	\begin{tabularx}{\textwidth}{|l|C C C C|}
+	\hline 
+	 & Meteor & NativeScript & ReactNative & Xamarin \\ 
+	\hline 
+	\textbf{Cross platform} & \cmark & \cmark & \cmark & \cmark \\ 
+	\hline 
+	\textbf{Community} & \cmark & \cmark & \cmark & \cmark \\ 
+	\hline 
+	\textbf{BLE capabilities} & \cmark & \cmark & \cmark & \cmark \\ 
+	\hline 
+	1 platform & \cmark & \cmark & \xmark & \xmark \\ 
+	\hline 
+	Type safety & \xmark & \cmark & \xmark & \cmark \\ 
+	\hline 
+	Reactive data & \cmark & \xmark & \xmark & \xmark \\ 
+	\hline 
+	Native performance & \xmark & \cmark & \cmark & \cmark \\ 
+	\hline 
+	\end{tabularx} 
+	
+\subsubsection{Conclusion}
+\textit{NativeScript} fulfills most of our requirements out of the box. The only thing that is not support out of the box is reactive data, however this can still be achieved with other tools. Therefore the selection falls upon \textit{NativeScript}.

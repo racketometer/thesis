@@ -1,7 +1,7 @@
 % Tabluarx colummn fill width R and L justification
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
-\newcolumntype{C}{>{\setlength\hsize{1\hsize}\centering}X}
+\newcolumntype{C}{>{\hsize=1\hsize\centering\arraybackslash}X}
 
 % ¤¤ Add graphics ¤¤ %
 % Parameters
@@ -40,3 +40,7 @@
         \par\noindent\textcolor{usercolor}{\hrule}
     \end{tabularx}
 }
+
+% ¤¤ Icons ¤¤ %
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
