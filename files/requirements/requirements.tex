@@ -1,0 +1,80 @@
+\chapter{Requirements}
+This chapter defines the requirements for the project. 
+The functional requirements are described with \textit{user stories}, i.e. short sentences describing a given user demand, with some additional conditions of satisfaction to increase the testable details and add non-functional requirements.
+
+\section*{User stories}
+
+\userstory{As a consultant, I want to use a tablet to access the system}
+
+Device operating systems to support includes: \newline
+\begin{tabularx}{\textwidth}{X}
+    Apple iOS 8 and 9 \\
+    Android 4.2, 4.3, 4.4, 5.0, 5.1 and 6.0
+\end{tabularx}
+
+This covers 92.4\% and 91.5\% of Android and iOS devices respectively, according to the distribution tables in appendices \ref{appendix:androidDistribution} and \ref{appendix:appleDistribution}.
+
+\userstory{As a consultant, I want to input user information when beginning a session and automatically add them to the user database}
+
+If internet is present, the user information must be submitted immediately to the database.
+
+If internet is not present, the user information must be stored on the device for later automatic submission.
+
+Information to input must include the following fields:\newline
+\field[The full name of the user]{name}{string}
+\field{email}{string}
+\field{birthday}{Date}
+\field[Years of experience]{experience}{int}
+\field[Type of racket from predefined list]{racketType}{RacketType}
+\field[Allow comparison to other users]{isComparisonAllowed}{boolean}
+
+\userstory{As a consultant, I want to start a session with a user and record data from the racket}
+
+Information is transmitted from racket to the system with \textit{BlueTooth BLE}. 
+
+Information saved for a session must include: \newline
+\field{consultant}{Consultant}
+\field[Date of the recording session]{date}{Date}
+\field{location}{Location}
+\field[Recorded racket data]{racketDate}{RacketData}
+\field{user}{User}
+
+\userstory{As a consultant, I want to show details of recorded data to specific users}
+
+Measured data to be presented as numbers or graphs: \newline
+\field[Number of hits]{hits}{int}
+\field[Most used types of hits from predefined types]{types}{Array<HitType>}
+\field[Maximum racket speed in m/s]{maxRacketSpeed}{double}
+\field[Maximum shuttlecock speed in m/s]{maxShuttleCockSpeed}{double}
+
+\userstory{As a consultant, I want to send user profiles to enlisted users at any given time}
+
+If internet is present, the email must be submitted immediately.
+
+If internet is not present, the email must be stored on the device for later automatic submission.
+
+It must be possible to send user profiles from the details view immediately after a session and later when the consultant browses a specific user.
+
+The email must include a summary of the user profile and a link to the complete user profile on the web page.
+
+\userstory{As a user, I want to compare my performance data to other users}
+
+Users that allows comparison must be able to be matched on ranking lists.
+
+Ranking lists must be available on the following metrics: \newline
+\begin{tabularx}{\textwidth}{X}
+    Number of total hits \\
+    Number of hits on specific predefined hit types \\
+    Racket speed \\
+    Shuttlecock speed \\
+\end{tabularx}
+
+\userstory{As a user, I want to share my user profile on social media}
+
+Social media includes Facebook and Twitter.
+
+The shared information must be a summary of the performance, possibly edited by the user, and a link to the complete user profile on the web page.
+
+\userstory{As a user, I want to see my recorded data compared to historical data}
+
+If a user has multiple recorded sessions, metrics must be presented in comparison with the previously recorded metrics.

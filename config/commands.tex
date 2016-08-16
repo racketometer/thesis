@@ -41,6 +41,14 @@
     \end{tabularx}
 }
 
+% ¤¤ Data field ¤¤ %
+% \field[optional description]{name}{type}
+\newcommand{\field}[3][]{
+    \begin{tabularx}{\textwidth}{X}
+        #2 \texttt{\detokenize{#3}} #1
+    \end{tabularx}
+}
+
 % ¤¤ Icons ¤¤ %
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
