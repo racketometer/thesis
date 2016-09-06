@@ -1,0 +1,17 @@
+\chapter{Minimal project}
+In the pre-studies each framework and technology was researched and the theoretical cooperation between them was taken into account.
+As the used technologies are all very new and the combination of them are not practically known to work, a minimal project was created to verify this.
+
+Most frameworks supply simple \textit{Getting started} projects to showcase the framework in action.
+This was also the case with the selected frameworks \textit{NativeScript} \citep{minimalProject:sample:nativescript} and \textit{Apollo} \citep{minimalProject:sample:apollo}.
+
+As \textit{NativeScript} is the main framework to build the application with, their sample project was used as a base.
+From this the \textit{Apollo} sample was studied and merged into the project to verify the cooperation.
+This proved to have some complications as \textit{Angular 2} was still in release candidate versions, with major API changes between each version, and the samples were not supporting the same version.
+
+By studying the commit history, in the \textit{GitHub} version control repositories, of both the \textit{NativeScript} and \textit{Apollo} sample, a compatible version set was found.
+Some technical complications regarding the type definitions, i.e. TypeScript files translating JavaScript sources to TypeScript sources, was causing some compile time complications and some manual type definitions was written to overcome this.
+By use of the \textit{Apollo} server sample, a simple backend server was setup locally to allow the mobile applications to communicate with a server instance.
+When this was set up the frameworks were able to perform a simple query to the backend and receive data from the database.
+
+As of this we were sure the frameworks could cooperate and confident enough to proceed the development process with the them.
