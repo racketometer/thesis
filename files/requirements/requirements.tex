@@ -1,4 +1,4 @@
-\chapter{Requirements}
+\chapter{Requirements}\label{ch:Requirements}
 This chapter defines the requirements for the project. 
 The functional requirements are described with \textit{user stories}, i.e. short sentences describing a given user demand, with some additional conditions of satisfaction to increase the testable details and add non-functional requirements.
 
@@ -47,15 +47,17 @@ Measured data to be presented as numbers or graphs: \newline
 \field[Maximum racket speed in m/s]{maxRacketSpeed}{double}
 \field[Maximum shuttlecock speed in m/s]{maxShuttleCockSpeed}{double}
 
-\userstory{As a consultant, I want to send user profiles to enlisted users at any given time}
+\userstory{As a user, I want to receive an email with a generated password for my account, when a consultant have created an account on my behalf}
+
+When a consultant creates an account on behalf of a user, the user should be able to access that account with an auto generated password send to his account after creation.
 
 If internet is present, the email must be submitted immediately.
 
 If internet is not present, the email must be stored on the device for later automatic submission.
 
-It must be possible to send user profiles from the details view immediately after a session and later when the consultant browses a specific user.
+\userstory{As a user, I want to be able to change my password from within the application}
 
-The email must include a summary of the user profile and a link to the complete user profile on the web page.
+If internet is not present, this operation is not possible.
 
 \userstory{As a user, I want to compare my performance data to other users}
 
