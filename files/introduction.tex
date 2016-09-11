@@ -46,19 +46,41 @@ Further more they have great knowledge of the badminton community and a great pe
 They will be referred to as the ''consultants'' throughout this report.
 
 \section*{Work process}
-The project process is managed with the agile SCRUM development framework.
-Tasks are managed in a backlog and pulled into sprints of two weeks.
-The process of adding tasks to the backlog are done in groomming sessions where the next parts of the project is discussed and reflection, i.e. retrospective, of tasks not finished or newly arisen issues are weighted and prioritized.
+The project process is managed with the agile Scrum development framework as this is the most popular methodology in software development \citep{introduction:work:scrum}. 
+The flow of events utilized in the process are as follows.
+A grooming session is held to discuss and define new tasks for the project.
+This is a returning event in every sprint and makes sure the \textit{Backlog} is prioritized and up to date.
 
-Visualization of tasks and their state is done with an online scrum board.
-The tool to use is decided in a pre-study, see section \ref{preStudy:scrum}.
+The \textit{Backlog} is holding all tasks to be carried out.
+They are all estimated with Scrum points, an arbitrary value of how large a given task is.
+This is an estimate and the team is ''learning by doing'' what a single Scrum point means.
+The number of points to burn down each sprint is set by comparing the former sprints total burndown and the expected available resources in the coming sprint.
+Each sprint is set for two weeks. 
+This was evaluated in the initial weeks of the project where sprints with one and two weeks duration was tested out.
+The latter one was what fit us the most as this covered enough work to make progress and little enough to assess.
 
-There is no delegation of specific tasks, e.g. front-end and back-end.
-Instead tasks are solved as time and prioritization sees fit.
+In the grooming sessions a non-formal \textit{retrospective}, i.e. reflection of the sprint, is held. 
+If any tasks were not finished in the current sprint, it is decided if they should be moved into the new sprint or the \textit{Backlog} for latter completion.
+
+Visualization of tasks and their states is done with an online Scrum board.
+The tool used was decided in a pre-study, see section \ref{preStudy:scrum}.
+On figure \ref{fig:introduction:scrumBoard} is a snapshot of the current sprint.
+On the left, column \textit{Ready}, is the tasks ready to be completed in the sprint.
+Just left of this column is a collapsed column with the \textit{Backlog}.
+Next to this is the \textit{In Progress} column holding all tasks currently being worked upon.
+After a task is done it moves to the \textit{Review} column where it is reviewed by a team member.
+When the review is done and there are no comments or they are resolved, the tasks is placed in the \textit{Done} column.
+
+To make the management of tasks as easy as possible, the used tool synchronizes with \textit{Git} branches, i.e. in progress work in version control. 
+When a new branch is created in \textit{Git}, referencing a task number, it is moved to \textit{In Progress}. 
+When a \textit{Pull Request}, i.e. the changes are ready to be merged into the \textit{master} branch, the task is moved to \textit{Review} and finally if the \textit{Pull Request} is closed and merged, the task is put in \textit{Done}.
+
+\graphic{1}{scrumBoard}{Snapshot of the Scrum board}{fig:introduction:scrumBoard}
 
 \section*{Roadmap}
-In planning what we can achieve during this project, a roadmap was created with
-milestones and dates. The roadmap focuses on the progress of the application
-during the project. The roadmap will be used during SCRUM planning and might
-change over the duration of the project. See the roadmap in figure \ref{fig:introduction:roadmap}.
+In planning what we can achieve during this project, a roadmap was created with milestones and dates. 
+The roadmap focuses on the progress of the application during the project. 
+The roadmap will be used during SCRUM planning and might change over the duration of the project. 
+See the roadmap on figure \ref{fig:introduction:roadmap}.
+
 \graphic{1}{Timeline_v1_2.png}{Roadmap}{fig:introduction:roadmap}
