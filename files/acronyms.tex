@@ -1,0 +1,157 @@
+% Define acronyms and glossaries here.
+
+%
+% Glossaries
+%
+% \newglossaryentry{<label>}{
+%     name = {<name>},
+%     description = {<description>}
+% }
+
+\newglossaryentry{ng1}{
+    name = {AngularJS},
+    description = {A JavaScript Single-Page application framework from Google}
+}
+
+\newglossaryentry{ng2}{
+    name = {Angular 2},
+    description = {A JavaScript Single-Page application framework from Google}
+}
+
+\newglossaryentry{react}{
+    name = {React},
+    description = {A JavaScript Single-Page application framework from Facebook}
+}
+
+\newglossaryentry{redux}{
+    name = {Redux},
+    description = {A JavaScript framework to enable a state container in an application}
+}
+    
+\newglossaryentry{bluetooth}{
+    name = {Bluetooth},
+    description = {A wireless technology standard to transfer data over short ranges between devices}
+}
+
+\newglossaryentry{bluetooth:ble}{
+    name = {Bluetooth Low Energy},
+    description = {A wireless technology standard based on Bluetooth but with lower power consumption}
+}
+
+\newglossaryentry{scrum}{
+    name = {Scrum},
+    description = {Agile software development framework}
+}
+
+\newglossaryentry{scrum:board}{
+    name = {Scrum board},
+    description = {A board consisting of columns named after task states. Tasks move from left to right over the board an visualize the progress of the current sprint}
+}
+
+\newglossaryentry{scrum:point}{
+    name = {Scrum point},
+    description = {An arbitrary measure of the effort to complete a Scrum task}
+}
+
+\newglossaryentry{cpd}{
+    name = {Cross platform development},
+    description = {Software development that targets multiple operating systems and hardware platforms, e.g. \textit{Android} and \textit{iOS} operating systems}
+}
+
+\newglossaryentry{userstory}{
+    name = {user story},
+    plural = {user stories},
+    description = {Sentence describing a given user demand in the form: As a <user>, I want to <action>}
+}
+
+\newglossaryentry{typedefinition}{
+    name = {type definition},
+    description = {TypeScript files translating JavaScript sources to TypeScript sources}
+}
+
+\newglossaryentry{cordova}{
+    name = {Cordova},
+    description = {An open source framework for developing cross-platform mobile applications with \glstext{html}, \glstext{css} and JavaScript}
+}
+
+\newglossaryentry{ddpg}{
+    name = {Distributed Data Protocol},
+    description = {A client-server protocol based on the publish-subscribe messaging pattern to synchronize changes to the backend database with clients}
+}
+
+\newglossaryentry{apig}{
+    name = {API},
+    description = {Interface between applications to enable well defined communication methods}
+}
+
+\newglossaryentry{node}{
+    name = {Node.js},
+    description = {A JavaScript runtime running on multiple platforms that enable developers to write applications in JavaScript without the need of a browser}
+}
+
+\newglossaryentry{nosql}{
+    name = {NoSQL},
+    description = {Database based on a non-relational data schema}
+}
+
+\newglossaryentry{mysql}{
+    name = {MySQL},
+    description = {Open Source database based on a relational data schema}
+}
+
+\newglossaryentry{mongodb}{
+    name = {MongoDB},
+    description = {Open Source document database based on a non-relational data schema}
+}
+
+\newglossaryentry{graphql}{
+    name = {GraphQL},
+    description = {A query language specification defineing the \gls{api} between destributed software systems}
+}
+
+%
+% Acronyms
+%
+% \newacronym{<label>}{<name>}{<description>}
+%
+% or if reference to descibtion is nessesary:
+%
+% \newglossaryentry{ble}{
+%     type = \acronymtype,
+%     name = {<name>},
+%     description = {<description>},
+%     first = {<description> (<name>))\glsadd{<labelToGlossary>}},
+%     see = [Glossary:]{<labelToGlossary>}
+% }
+
+\newacronym{oss}{OSS}{Open Source Software}
+\newacronym{html}{HTML}{Hyper Text Markup Language}
+\newacronym{css}{CSS}{Cascading Style Sheets}
+\newacronym{cli}{CLI}{Command Line Interface}
+\newacronym{xml}{XML}{Extensible Markup Language}
+\newacronym{ui}{UI}{User Interface}
+\newacronym{json}{JSON}{JavaScript Object Notation}
+
+\newglossaryentry{ble}{
+    type = \acronymtype,
+    name = {BLE},
+    description = {Bluetooth Low Energy},
+    first = {Bluetooth Low Energy (BLE)\glsadd{bluetooth:ble}},
+    see = [Glossary:]{bluetooth:ble}
+}
+
+\newglossaryentry{ddp}{
+    type = \acronymtype,
+    name = {DDP},
+    description = {Distributed Data Protocol},
+    first = {Distributed Data Protocol (DDP)\glsadd{ddpg}},
+    see = [Glossary:]{ddpg}
+}
+
+\newglossaryentry{api}{
+    type = \acronymtype, 
+    name = {API}, 
+    description = {Application Programming Interface},
+    first = {Application Programming Interface (API)\glsadd{apig}},
+    see = [Glossary:]{apig}
+}

@@ -1,5 +1,5 @@
 \section{Back-end frameworks}
-This section will evaluate different frameworks and services to support the project with data storage and possibly for running heavy jobs that are not prefered to run on the client applications.
+This section will evaluate different frameworks and services to support the project with data storage and possibly for running heavy jobs that are not preferred to run on the client applications.
 Some \textit{must have} and \textit{nice to have} capabilities are listed below.
 	
 \subsection*{Must have}
@@ -10,7 +10,7 @@ Some \textit{must have} and \textit{nice to have} capabilities are listed below.
 	
 \subsection*{Nice to have}	
 	\begin{itemize}
-	\item Generic API.
+	\item Generic \gls{api}.
 	\item Reactive data. Updated data in the database should reflect on the client.
 	\end{itemize}
 	
@@ -18,20 +18,21 @@ Some \textit{must have} and \textit{nice to have} capabilities are listed below.
 \subsection*{Firebase}
 \textbf{Function:} Reactive Data storage
 \\
-\textbf{Database type:} NoSQL
+\textbf{Database type:} \gls{nosql}
 \\
 \textbf{Description:}
 \\
 \textit{Firebase} is a database platform from Google, Inc. 
 It has lots of features one do not normally see on a database, e.g. user authentication.
-It is a real-time database, i.e. the data is reactive, so whenever there is a change in the database, this is pushed to the clients. Pushing data into the database is done with JSON (JavaScript Object Notation) and running specific functionality is not supported.
+It is a real-time database, i.e. the data is reactive, so whenever there is a change in the database, this is pushed to the clients. 
+Pushing data into the database is done with \gls{json} and running specific functionality is not supported.
 It is however possible by use of a commercial product from  \textit{Zapier}\fxfatal{Reference to this?}.
 
 \subsection*{Apollo}
 \textbf{Function:} Reactive Data storage
 \\
 \textbf{Database type:} None specific, free to choose.
-Client application interface is \textit{GraphQL}.
+Client application interface is \textit{\gls{graphql}}.
 \\
 \textbf{Description:}
 \\
@@ -39,11 +40,11 @@ Client application interface is \textit{GraphQL}.
 This means that your data will always be up-to-date if desired.
 It is a data stack provided by the \textit{Meteor} team, but as opposed to the \textit{Meteor} framework, \textit{Apollo} is to be used in any application. 
 
-There are integration guides for \textit{Angular 2}, \textit{Redux}, \textit{Meteor}, \textit{React} and \textit{React native}, but one should be able to integrate it into any JavaScript front-end.
+There are integration guides for \textit{\gls{ng2}}, \textit{\gls{redux}}, \textit{Meteor}, \textit{\gls{react}} and \textit{React native}, but one should be able to integrate it into any JavaScript front-end.
 \textit{Apollo} consists of two parts. 
-A schema that describes the type of data available on the server and a query language, \textit{GraphQL}, that enables the client to describe the data it needs. 
-This decouples the client from the database type as \textit{GraphQL} is only a query specification.
-\textit{Apollo} can query different types of database like \textit{MongoDB}, \textit{MySQL} etc. without the client realising it.
+A schema that describes the type of data available on the server and a query language, \textit{\gls{graphql}}, that enables the client to describe the data it needs. 
+This decouples the client from the database type as \textit{\gls{graphql}} is only a query specification.
+\textit{Apollo} can query different types of database, e.g. \textit{\gls{mongodb}} and \textit{\gls{mysql}}, without the client realising it.
 As the client specifies what properties are needed, no unused data is send over the wire.
 
 \subsection*{Requirements summary}
@@ -57,7 +58,7 @@ This table shows how each framework and service fulfills the specified requireme
 	\hline
 	\textbf{Support authentication} & \cmark & \cmark \\ 
 	\hline 
-	Generic API & \xmark & \cmark \\ 
+	Generic \gls{api} & \xmark & \cmark \\ 
 	\hline 
 	Reactive data & \cmark & \cmark \\ 
 	\hline 	

@@ -1,13 +1,13 @@
 \section{Cross-platform frameworks}
 
-This section will evaluate different frameworks for cross-platform development which could be used in the project. 
+This section will evaluate different frameworks for \gls{cpd} which could be used in the project. 
 Some \textit{must have} and \textit{nice to have} capabilities is listed below.
 	
 \subsection*{Must have}
 	\begin{itemize}
 	\item Cross platform capabilities.
 	\item Wide community support.
-	\item \textit{Bluetooth Low Energy} capabilities.
+	\item \gls{bluetooth:ble} capabilities.
 	\end{itemize}
 	
 \subsection*{Nice to have}
@@ -26,28 +26,28 @@ Some \textit{must have} and \textit{nice to have} capabilities is listed below.
 \textbf{Description:}
 \\
 \textit{Meteor} is a platform and framework for developing both web and mobile applications. 
-It comes with \textit{Cordova} built-in and is considered super fast for developing applications and prototyping. 
+It comes with \gls{cordova} built-in and is considered super fast for developing applications and prototyping. 
 It comes with a lot of built-in tools and a package library for easy setup of things like user  and login integrations of different kinds, e.g. \textit{Google} and \textit{Facebook}. It comes with hot code push which is a tool for uploading new versions of your application to the App-stores.
 
-\textit{Meteor} has its own CLI (Command Line Interface which is very useful when developing and it allows one to write the back-end in plain JavaScript. 
-Out of the box it integrates with \textit{Mongo}, a document database for data storage and it uses \textit{DDP} (Distributed Data Protocol) for sending data between the client and the server. 
+\textit{Meteor} has its own \gls{cli} which is very useful when developing and it allows one to write the back-end in plain JavaScript. 
+Out of the box it integrates with \textit{\gls{mongodb}} and it uses \textit{\gls{ddp}} for sending data between the client and the server. 
 This data is reactive and will be updated at the clients when it changes.
 
-\textit{Meteor} comes with its own view layer named \textit{Blaze} but this can be substituted with \textit{React} or \textit{AngularJS} if any of them is preferred.
+\textit{Meteor} comes with its own view layer named \textit{Blaze} but this can be substituted with \textit{\gls{react}}, \textit{\gls{ng1}} or \textit{\gls{ng2}} if any of them are preferred.
 
 \subsection*{NativeScript}
 \textbf{Language:} JavaScript
 \\
 \textbf{Description:}
 \\
-\textit{NativeScript} uses a JavaScript toolchain to compile the JavaScript code into native APIs. 
-This is a huge advantage because it makes the application work exactly like it was written natively without ever writing any native code or knowing about the native APIs. 
-The markup is written in an XML (Extensible Markup Language) like language and is styled with CSS (Cascading Style Sheets).
+\textit{NativeScript} uses a JavaScript toolchain to compile the JavaScript code into the native \gls{api}. 
+This is a huge advantage because it makes the application work exactly like it was written natively without ever writing any native code or knowing about the native \glspl{api}. 
+The markup is written in an \gls{xml} like language and is styled with \gls{css}.
 It is developed by Telerik, a big software company where one can opt-in for support through a paid license. 
 
-It is supported by Google and therefore works well with \textit{AngularJS} and TypeScript and with this the \textit{nice to have} feature ''type safety'' is fulfilled. 
-\textit{Bluetooth Low Energy} capabilities can be achieved with the \textit{Node.js} package \textit{nativescript-bluetooth}, created by \textit{npm} user eddyverbruggen. 
-\textit{NativeScript} supports \textit{iOS}, \textit{Android}, \textit{Universal Windows Platform} and if \textit{AngularJS} is used it also supports building web applications \citep{preStudy:frameworks:nativescript}.
+It is supported by Google and therefore works well with \textit{\gls{ng2}} and TypeScript and with this the \textit{nice to have} feature ''type safety'' is fulfilled. 
+\textit{\gls{bluetooth:ble}} capabilities can be achieved with the \gls{node} package \textit{nativescript-bluetooth}, created by \textit{npm} user eddyverbruggen. 
+\textit{NativeScript} supports \textit{iOS}, \textit{Android}, \textit{Universal Windows Platform} and if \textit{\gls{ng2}} is used it also supports building web applications \citep{preStudy:frameworks:nativescript}.
 
 
 \subsection*{ReactNative}
@@ -56,9 +56,9 @@ It is supported by Google and therefore works well with \textit{AngularJS} and T
 \textbf{Description:}
 \\
 \textit{ReactNative} is a framework by Facebook, Inc.
-It extends the \textit{React} framework for building native applications. 
+It extends the \textit{\gls{react}} framework for building native applications. 
 \textit{ReactNative} requires the developer to know Objective-C for \textit{iOS} development and Java for \textit{Android} development. 
-This does not fulfill the requirement that it has to be cross-platform without the developer needing to know about the distinct platform languages and APIs.
+This does not fulfill the requirement that it has to be cross-platform without the developer needing to know about the distinct platform languages and \glspl{api}.
 
 
 \subsection*{Xamarin}
@@ -69,10 +69,10 @@ This does not fulfill the requirement that it has to be cross-platform without t
 \textit{Xamarin} was recently purchased by Microsoft. It is a cross-platform framework for developing applications for \textit{iOS}, \textit{Android}, \textit{Windows Phone} and \textit{Windows Universal Platform}. 
 There are two main ways of developing with \textit{Xamarin}. 
 \textit{Xamarin forms} which is the method that has the highest amount of code-sharing between platforms. 
-It is estimated around 80-95\% code sharing depending on how specific the UI has to be. 
+It is estimated around 80-95\% code sharing depending on how specific the \gls{ui} has to be. 
 The other is \textit{Xamarin native} which has around 50-60\% code sharing with mainly business login.
-With this the UI implementations differ for each platform. 
-When using \textit{Xamarin native} it is a huge advantage to know about the native UI APIs.
+With this the \gls{ui} implementations differ for each platform. 
+When using \textit{Xamarin native} it is a huge advantage to know about the native \gls{ui} \glspl{api}.
 
 \subsection*{Requirements summary}
 This table shows how each framework fulfills the specified requirements.
@@ -85,7 +85,7 @@ This table shows how each framework fulfills the specified requirements.
 	\hline 
 	\textbf{Community} & \cmark & \cmark & \cmark & \cmark \\ 
 	\hline 
-	\textbf{BLE capabilities} & \cmark & \cmark & \cmark & \cmark \\ 
+	\textbf{\gls{ble} capabilities} & \cmark & \cmark & \cmark & \cmark \\ 
 	\hline 
 	1 platform & \cmark & \cmark & \xmark & \xmark \\ 
 	\hline 
