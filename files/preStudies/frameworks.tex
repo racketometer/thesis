@@ -1,25 +1,33 @@
 \section{Cross-platform frameworks}
 
-This section will evaluate different frameworks for \gls{cpd} which could be used in the project. 
-Some \textit{must have} and \textit{nice to have} capabilities is listed below.
+This section will evaluate different frameworks for cross-platform development which could be used in the project.
+
+It is considered a requirement that the application works on multiple platforms as the initial interview with the consultants, appendix \ref{appendix:consultantsInterview}, established the needs for this. Further more the existing racket hardware communicates with \gls{bluetooth:ble}.
+When working with new technologies the community is an indicator of the adoption of the technology and is considered important, as to avoid learning short-lived technologies.
+
+The \textit{nice to have} requirements are defined from a developers point of view. 
+If the framework supports both web and mobile applications functionality can be reused and thus reduce development effort and costs
+Type safety also reduces development costs as less errors are introduced by the developer when the compiler detects mistakes.
+To follow modern standards in mobile, and web, development, data must be reactive, as this is expected by the users.
+If the code base compiles to native \glspl{api} as well, performance is increased and thus the user experience is improved.
+
+The \textit{must have} and \textit{nice to have} capabilities are summed up below.
 	
 \subsection*{Must have}
-	\begin{itemize}
+\begin{itemize}
 	\item Cross platform capabilities.
 	\item Wide community support.
 	\item \gls{bluetooth:ble} capabilities.
-	\end{itemize}
+\end{itemize}
 	
 \subsection*{Nice to have}
-	
-	\begin{itemize}
+\begin{itemize}
 	\item One platform both for web and mobile applications.
 	\item Type safety in the programming language.
 	\item Reactive data. Updated data in the database should reflect on the clients.
 	\item Compiles to native code for increased performance.
-	\end{itemize}
+\end{itemize}
 	
-
 \subsection*{Meteor}
 \textbf{Language:} JavaScript
 \\

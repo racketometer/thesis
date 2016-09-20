@@ -1,19 +1,25 @@
 \section{Back-end frameworks}
 This section will evaluate different frameworks and services to support the project with data storage and possibly for running heavy jobs that are not preferred to run on the client applications.
-Some \textit{must have} and \textit{nice to have} capabilities are listed below.
+
+As a minimum, the back-end must have the capabilities to store and retrieve data from some kind of database and as the data to store is personal records of the user's performances, access to the back-end must be limited with authentication.
+
+In the ''nice to have'' part, an implementation independent interface for the clients is preferred, i.e. a generic \gls{api}.
+This makes sure the clients do not become dependent on the back-end implementations.
+As with the cross platform frameworks, the back-end must support some kind of reactive data structure to follow modern standards.
+
+The \textit{must have} and \textit{nice to have} capabilities are summed up below.
 	
 \subsection*{Must have}
-	\begin{itemize}
+\begin{itemize}
 	\item Be able to store and retrieve data.
 	\item Support authentication.
-	\end{itemize}
+\end{itemize}
 	
 \subsection*{Nice to have}	
-	\begin{itemize}
+\begin{itemize}
 	\item Generic \gls{api}.
 	\item Reactive data. Updated data in the database should reflect on the client.
-	\end{itemize}
-	
+\end{itemize}
 
 \subsection*{Firebase}
 \textbf{Function:} Reactive Data storage
