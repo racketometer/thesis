@@ -21,6 +21,23 @@
     \end{figure}
 }
 
+% ¤¤ Add multipage pdf ¤¤ %
+% Parameters
+%  #1: Width ratio of full page
+%  #2: Relative path from graphics folder
+%
+% \ajoutpdf{1}{1.jpg}
+%
+% From: http://tex.stackexchange.com/a/324786
+
+\newcommand{\ajoutpdf}[2] {
+    \pdfximage{graphics/#2}
+    \multido{\i=1+1}{\the\pdflastximagepages}{
+        \includegraphics[page=\i,scale=#1]{graphics/#2}
+        \newpage
+    }
+}
+
 % ¤¤ Add Italic to gls ¤¤ %
 % Parameters
 %  #1: the gls keyword
@@ -62,5 +79,5 @@
 }
 
 % ¤¤ Icons ¤¤ %
-\newcommand{\cmark}{\ding{51}}%
-\newcommand{\xmark}{\ding{55}}%
+\newcommand{\cmark}{\ding{51}} % cross
+\newcommand{\xmark}{\ding{55}} % checkmark
