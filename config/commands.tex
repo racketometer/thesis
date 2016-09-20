@@ -21,6 +21,16 @@
     \end{figure}
 }
 
+% ¤¤ Add Italic to gls ¤¤ %
+% Parameters
+%  #1: the gls keyword
+%
+% \glsi{nativescript}
+
+\newcommand{\glsi}[1]{
+    \textit{\gls{#1}}
+}
+
 % ¤¤ Signature line ¤¤ %
 % Include comment parts to show dates on line
 \newcommand*{\signature}[2]{%
