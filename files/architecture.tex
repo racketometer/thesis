@@ -1,5 +1,14 @@
-\chapter{Framework architecture}
+\chapter{Architecture}
+This chapter describes the architecture used in the project.
 
+\section{Domain model}
+Given the above introduction a domain model was derived, figure \ref{fig:domainModel}, to make the domain entity relations visible.
+This is done to make sure the understanding of the relations are clear before doing any further development.
+It is important to note that this is a tentative model and as long as the project is under development, it is subject to change.
+
+\graphic{1}{domain_model}{Domain model}{fig:domainModel}
+
+\section{Framework architecture}
 Multiple frameworks are used in the project. 
 This is a short description of the responsibilities each framework is responsible for. 
 An overview is shown on figure \ref{frameworkArchitecture}.
@@ -17,4 +26,6 @@ This is the counter part to the \gls{apollo:client} and provides the reactive da
 It further defines the \gls{api} for collecting data from databases like \gls{mongodb}, as this project utilizes.
 Both of these frameworks run on the \gls{node} run-time, which in turn runs on the \gls{v8} JavaScript engine.
 
-\graphic{1}{frameworkArchitecture}{Framework architecture overview}{frameworkArchitecture}
+\graphic{0.9}{frameworkArchitecture}{Framework architecture overview}{frameworkArchitecture}
+
+\input{files/N+1/index}
