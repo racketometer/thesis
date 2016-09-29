@@ -1,10 +1,12 @@
 \chapter{Requirements}\label{ch:Requirements}
 This chapter defines the requirements for the project. 
-The functional requirements are described with \glspl{userstory} with some additional conditions of satisfaction to increase the testable details and add non-functional requirements.
+The functional requirements are described with \glspli{userstory} with some additional conditions of satisfaction to increase the testable details and add non-functional requirements.
 
 \section*{User stories}
 
 \userstory{As a consultant, I want to use a tablet to access the system}
+
+This \glsi{userstory} is specified in the consultant interview appendix \ref{appendix:consultantsInterview:tools}.
 
 Device operating systems to support includes: \newline
 \begin{tabularx}{\textwidth}{X}
@@ -15,6 +17,8 @@ Device operating systems to support includes: \newline
 This covers 92.4\% and 91.5\% of \textit{Android} and \textit{iOS} devices respectively, according to the distribution tables in appendices \ref{appendix:androidDistribution} and \ref{appendix:appleDistribution}.
 
 \userstory{As a consultant, I want to input user information when beginning a session and automatically add them to the user database}
+
+This \glsi{userstory} is specified in the consultant interview appendix \ref{appendix:consultantsInterview:flow}.
 
 If internet is present, the user information must be submitted immediately to the database.
 
@@ -30,6 +34,8 @@ Information to input must include the following fields:\newline
 
 \userstory{As a consultant, I want to start a session with a user and record data from the racket}
 
+This \glsi{userstory} is specified in the consultant interview appendix \ref{appendix:consultantsInterview:flow}.
+
 Information is transmitted from racket to the system with \textit{\gls{bluetooth:ble}}. 
 
 Information saved for a session must include: \newline
@@ -41,6 +47,8 @@ Information saved for a session must include: \newline
 
 \userstory{As a consultant, I want to show details of recorded data to specific users}
 
+This \glsi{userstory} is specified in the consultant interview appendix \ref{appendix:consultantsInterview:flow} and \ref{appendix:consultantsInterview:features}.
+
 Measured data to be presented as numbers or graphs: \newline
 \field[Number of strokes]{strokes}{int}
 \field[Most used types of strokes from predefined types]{types}{Array<StrokeType>}
@@ -48,6 +56,8 @@ Measured data to be presented as numbers or graphs: \newline
 \field[Maximum shuttlecock speed in m/s]{maxShuttleCockSpeed}{double}
 
 \userstory{As a user, I want to receive an email with a generated password for my account, when a consultant have created an account on my behalf}
+
+This \glsi{userstory} is specified in the consultant interview appendix \ref{appendix:consultantsInterview:features}.
 
 When a consultant creates an account on behalf of a user, the user should be able to access that account with an auto generated password send to his account after creation.
 
@@ -61,6 +71,8 @@ If internet is not present, this operation is not possible.
 
 \userstory{As a user, I want to compare my performance data to other users}
 
+This \glsi{userstory} is specified in the consultant interview appendix \fxfatal{Add reference to user survey appendix}
+
 Users that allows comparison must be able to be matched on ranking lists.
 
 Ranking lists must be available on the following metrics: \newline
@@ -73,10 +85,14 @@ Ranking lists must be available on the following metrics: \newline
 
 \userstory{As a user, I want to share my user profile on social media}
 
+This \glsi{userstory} is specified in the consultant interview appendix \fxfatal{Add reference to user survey appendix}
+
 Social media includes \textit{Facebook} and \textit{Twitter}.
 
 The shared information must be a summary of the performance, possibly edited by the user, and a link to the complete user profile on the web page.
 
 \userstory{As a user, I want to see my recorded data compared to historical data}
+
+This \glsi{userstory} is specified in the consultant interview appendix \fxfatal{Add reference to user survey appendix}
 
 If a user has multiple recorded sessions, metrics must be presented in comparison with the previously recorded metrics.
