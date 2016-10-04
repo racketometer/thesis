@@ -10,8 +10,8 @@ A \gls{node} environment is used on the server to communicate with a standalone 
 \subsection{Database schema}
 After analyzing the domain and the requirements the following database schema was created to fulfill our needs.
 
-It contains 2 collections i.e. \textit{Measurement} and \textit{User}. \textit{Users} represent all possible users of the system, both players, consultants and coaches. 
-They are then distinguish between then from flags on the document (\verb+isConsultant+ and \verb+isCoach+).
+It contains 2 collections, i.e. \textit{Measurement} and \textit{User}. \textit{User}s represent all possible users of the system, both players, consultants and coaches. 
+They are then distinguished with flags on the document (\verb+isConsultant+ and \verb+isCoach+).
 
 \textit{Users} have a zero-to-many relation to itself because users represent every possible users i.e. friends, consultants and coaches.
 
@@ -19,4 +19,4 @@ They are then distinguish between then from flags on the document (\verb+isConsu
 
 Measurements have a zero-to-many relationship to users because a user can have 0 measurements, but a measurement will always have at least 1 user and possible more if the measurement was uploaded by a coach or consultant.
 
-\graphic{1}{dbSchema}{MongoDB Schema}{fig:dbSchema}
+\graphic{1}{dbSchema}{Database schema with \textit{crow foot} notation}{fig:dbSchema}
