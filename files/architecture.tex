@@ -11,7 +11,7 @@ It is important to note that this is a tentative model and as long as the projec
 \section{Framework architecture}
 Multiple frameworks are used in the project. 
 This is a short description of the tasks each framework is responsible for. 
-An overview is shown on figure \ref{frameworkArchitecture}.
+An overview is shown on figure \ref{fig:frameworkArchitecture}.
 
 At the application layer of the front-end \gls{ng2} is responsible for the view rendering and business logic. 
 It communicates with the \gls{apollo:client}, that is responsible for communicating with the back-end, as well as holding application state. 
@@ -26,6 +26,33 @@ This is the counter part to the \gls{apollo:client} and provides the reactive da
 It further defines the \gls{api} for collecting data from databases like \gls{mongodb}, as this project utilizes.
 Both of these frameworks run on the \gls{node} run-time, which in turn runs on the \gls{v8} JavaScript engine.
 
-\graphic{0.9}{frameworkArchitecture}{Framework architecture overview}{frameworkArchitecture}
+\graphic{0.9}{frameworkArchitecture}{Framework architecture overview}{fig:frameworkArchitecture}
+
+\section{Front-end architecture}
+The front-end application is written in \gls{ng2}. 
+The framework utilizes a component structured \gls{mvc} architecture where each component represents the VC part and services cover M \citep{architecture:ng}, as shown on figure \ref{fig:mvcComponent}.
+
+A component is split into two parts. 
+The \verb+template+, specifically in \gls{nativescript}, is written in a language similar to \gls{xml} and represents how a component should be rendered in the \gls{ui}.
+It communicates with a \verb+controller+, the component class, with events and get information with property bindings. 
+It can communicate with services that are constructor injected by the Angular Dependency Injection system.
+
+A \verb+service+ is responsible for the business logic and can communicate with a back-end or perform calculations etc.
+It is possible to do this in the controllers as well, but it makes them harder to unit test and further more ads logic that is not view specific.
+
+\graphic{1}{mvcComponent}{\Gls{mvc} component with \gls{ng2} terminology}{fig:mvcComponent}
+
+The view is build from individual components, each responsible of a clear part of the whole \gls{ui}.
+As of this, the complete view can be illustrated as a component tree where each component can propagate events up and down the tree and communicate with services.
+
+On figure \ref{fig:componentTree} the component tree of a simple login view is illustrated.
+It contains an input component that uses some validation component and a button.
+The root component \verb+Login+ subscribes to click events on the button and change events on the input field.
+When the button is clicked, it initiates the authentication routine in the \verb+Authentication+ service.
+
+As the application grows more complex branches of the tree can be modularized.
+This makes the structure easy to mangle with and small parts, i.e. components, of the view can easily be reused.
+
+\graphic{0.6}{componentTree}{Component tree of a simple login view}{fig:componentTree}
 
 \input{files/N+1/index}
