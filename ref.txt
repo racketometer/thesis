@@ -1,0 +1,5 @@
+reference: https://medium.com/the-graphqlhub/graphql-and-authentication-b73aed34bbeb#.hz4p6ilbs add this someplace and possible save website?
+
+reference for viewer: https://gist.github.com/wincent/598fa75e22bdfa44cf47#how-does-graphql-know-what-type-of-data-is-being-requested-by-a-node-root-call
+
+RFC v4 ref: https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_.28random.29
