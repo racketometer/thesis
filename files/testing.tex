@@ -1,0 +1,53 @@
+\chapter{Testing}
+This chapter describes how testing is set up and managed a cross the applications.
+
+\section{Front-end}
+\Glsi{nativescript} have built in unit testing functionality to run tests on hardware or emulated devices \citep{testing:nativescript}.
+When setting this up, there were, for now, an unfixable complication caused by the front-end application build configuration.
+The project utilizes \glsi{webpack} to bundle and manipulate the source code at compile time and this is not compatible with the  unit testing flow of \glsi{nativescript}.
+
+As of this, we decided to test the business logic of the application with a stand-alone testing framework running on \glsi{node}.
+As \glsi{node} runs on the \glsi{v8} run-time, same as \textit{Android}, it still provides valid results though not running the tests on actual devices.
+
+The business logic is only unit tested as integration tests are not possible without the \gls{nativescript} testing framework.
+
+\section{Back-end}
+The back-end application is tested on two levels.
+The first level is unit tests.
+These are run on isolated functions where dependencies are mocked away.
+The second level is integration tests.
+These test the application on every level, with nothing mocked away. 
+
+\subsubsection{Unit tests}
+Unit tests, test isolated parts of the application. 
+They test functions at the different layers, where the below layer will be mocked away to make the tests isolated.
+This is the simplest form of tests but are still a valuable tool to create a durable and well tested application.
+
+\subsubsection{Integration tests}
+Integration tests work differently than the unit tests. 
+They do not test the code itself, but the application as a whole. 
+This means that these tests only go well, if no errors occur in any layer of the application. 
+A top down approach is used.
+The integration tests start up the node server, and then starts querying against it's endpoints. 
+When tests are run, a test database is used. This test database is seeded with known data every time the server starts in testing mode.
+
+\section{Continuous Integration}
+A \glsi{travis} is set up to run builds, tests and more for both the front and back-end applications.
+
+When commits are made and pushed to any one of the git repositories \glsi{travis} runs different tasks and verify the integrity of the commit.
+
+Tasks that are run include:
+
+\begin{enumerate}
+\item \textbf{Linting}: Code style is tested to keep code quality high and consistent
+\item \textbf{Build}: The source code is compiled
+\item \textbf{Tests}: Unit tests, and integration tests on back-end, are run to test code functionality
+\item \textbf{Code coverage}: Helps keeping track of what parts of the code is tested
+\end{enumerate} 
+
+Should any of these tasks fail, the user committing the code, will receive an email notification.
+This helps both the developer who made the change, but also the developer that have to review the changes.
+
+When a pull request is reviewed, it contains information about the test results and what the code coverage is.
+If code coverage decreases in the pull request, compared to the master branch, then the developer probably did not test the code well enough. 
+The lint check helps the reviewer to focus on the functional parts instead of syntactic and code style things.
