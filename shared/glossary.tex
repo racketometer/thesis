@@ -55,7 +55,8 @@
 
 \newglossaryentry{bluetooth:ble}{
     name = {Bluetooth Low Energy},
-    description = {A wireless technology standard based on Bluetooth but with lower power consumption}
+    description = {A wireless technology standard based on Bluetooth but with lower power consumption},
+    symbol = {BLE}
 }
 
 \newglossaryentry{scrum}{
@@ -99,17 +100,17 @@
     description = {An open source framework for developing cross-platform mobile applications with \glstext{html}, \glstext{css} and JavaScript}
 }
 
-\newglossaryentry{ddpg}{
+\newglossaryentry{ddp}{
     name = {Distributed Data Protocol},
     description = {A client-server protocol based on the publish-subscribe messaging pattern to synchronize changes to the backend database with clients}
 }
 
-\newglossaryentry{apig}{
+\newglossaryentry{api}{
     name = {API},
     description = {Interface between applications to enable well defined communication methods}
 }
 
-\newglossaryentry{mvcg}{
+\newglossaryentry{mvc}{
     name = {MVC},
     description = {Software architecture where the application responsibilities are separated into Model, responsible for business logic, View defining the UI and Controller facilitating communications between the view and models.}
 }
@@ -219,15 +220,9 @@
 %
 % \newacronym{<label>}{<name>}{<description>}
 %
-% or if reference to descibtion is nessesary:
+% or if reference to description is nessesary:
 %
-% \newglossaryentry{ble}{
-%     type = \acronymtype,
-%     name = {<name>},
-%     description = {<description>},
-%     first = {<description> (<name>))\glsadd{<labelToGlossary>}},
-%     see = [Glossary:]{<labelToGlossary>}
-% }
+% \newacronym[see={[Glossary:]{<labelToGlossary}}]{<reference>}{<name>}{<description>}
 
 \newacronym{oss}{OSS}{Open Source Software}
 \newacronym{html}{HTML}{Hyper Text Markup Language}
@@ -238,36 +233,3 @@
 \newacronym{json}{JSON}{JavaScript Object Notation}
 \newacronym{orm}{ORM}{Object-relational mapping}
 \newacronym{http}{HTTP}{Hyper Text Transport Protocol}
-
-\newglossaryentry{ble}{
-    type = \acronymtype,
-    symbol = {BLE},
-    name = {BLE},
-    description = {Bluetooth Low Energy},
-    first = {Bluetooth Low Energy (BLE)\glsadd{bluetooth:ble}},
-    see = [Glossary:]{bluetooth:ble}
-}
-
-\newglossaryentry{ddp}{
-    type = \acronymtype,
-    name = {DDP},
-    description = {Distributed Data Protocol},
-    first = {Distributed Data Protocol (DDP)\glsadd{ddpg}},
-    see = [Glossary:]{ddpg}
-}
-
-\newglossaryentry{api}{
-    type = \acronymtype,
-    name = {API},
-    description = {Application Programming Interface},
-    first = {Application Programming Interface (API)\glsadd{apig}},
-    see = [Glossary:]{apig}
-}
-
-\newglossaryentry{mvc}{
-    type = \acronymtype,
-    name = {MVC},
-    description = {Model View Controller},
-    first = {Model View Controller (MVC)\glsadd{mvcg}},
-    see = [Glossary:]{mvcg}
-}

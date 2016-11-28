@@ -9,32 +9,32 @@ It is important to note that this is a tentative model and as long as the projec
 \graphic{1}{domain_model}{Domain model}{fig:domainModel}
 
 \section{Framework architecture}
-Multiple frameworks are used in the project. 
-This is a short description of the tasks each framework is responsible for. 
+Multiple frameworks are used in the project.
+This is a short description of the tasks each framework is responsible for.
 An overview is shown on figure \ref{fig:frameworkArchitecture}.
 
-At the application layer of the front-end \gls{ng2} is responsible for the view rendering and business logic. 
-It communicates with the \gls{apollo:client}, that is responsible for communicating with the back-end, as well as holding application state. 
+At the application layer of the front-end \gls{ng2} is responsible for the view rendering and business logic.
+It communicates with the \gls{apollo:client}, that is responsible for communicating with the back-end, as well as holding application state.
 Between the front-end and back-end the \gls{api} is defined with \gls{graphql}.
 
-The client application layer is run with the \gls{nativescript} run-time. 
-At compile time, the \gls{ng2} views and styling is rendered to native UI elements and styling. 
+The client application layer is run with the \gls{nativescript} run-time.
+At compile time, the \gls{ng2} views and styling is rendered to native UI elements and styling.
 The application logic is held in JavaScript and run on a platform specific JavaScript engine, i.e. \gls{v8} for Android and \gls{javascriptcore} for iOS.
 
-On the back-end the application layer is an \gls{apollo:server} instance. 
-This is the counter part to the \gls{apollo:client} and provides the reactive data system. 
+On the back-end the application layer is an \gls{apollo:server} instance.
+This is the counter part to the \gls{apollo:client} and provides the reactive data system.
 It further defines the \gls{api} for collecting data from databases like \gls{mongodb}, as this project utilizes.
 Both of these frameworks run on the \gls{node} run-time, which in turn runs on the \gls{v8} JavaScript engine.
 
 \graphic{0.9}{frameworkArchitecture}{Framework architecture overview}{fig:frameworkArchitecture}
 
 \section{Front-end architecture}
-The front-end application is written in \gls{ng2}. 
+The front-end application is written in \gls{ng2}.
 The framework utilizes a component structured \gls{mvc} architecture where each component represents the VC part and services cover M \citep{architecture:ng}, as shown on figure \ref{fig:mvcComponent}.
 
-A component is split into two parts. 
+A component is split into two parts.
 The \verb+template+, specifically in \gls{nativescript}, is written in a language similar to \gls{xml} and represents how a component should be rendered in the \gls{ui}.
-It communicates with a \verb+controller+, the component class, with events and get information with property bindings. 
+It communicates with a \verb+controller+, the component class, with events and get information with property bindings.
 It can communicate with services that are constructor injected by the Angular Dependency Injection system.
 
 A \verb+service+ is responsible for the business logic and can communicate with a back-end or perform calculations etc.
@@ -55,6 +55,6 @@ This makes the structure easy to mangle with and small parts, i.e. components, o
 
 \graphic{0.6}{componentTree}{Component tree of a simple login view}{fig:componentTree}
 
-\input{files/architecture/backend_architecture}
+\input{thesis/architecture/backend_architecture}
 
-\input{files/N+1/index}
+\input{thesis/N+1/index}
