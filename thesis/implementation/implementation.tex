@@ -1,14 +1,14 @@
 \chapter{Implementation}
 This chapter describes some parts of the software implementation.
-For further details, see the documentation.
+For further details, see the documentation \fxfatal{Add note to where in documentation here}.
 
 \section{Algorithms}
 As mentioned in the introduction, section \ref{sec:externalCollaboration}, the consultants deliver the data algorithms to analyse the measurements from the racket.
-These algorithms are written in Python and by this not directly available to the \gls{node} environment on the back-end and JavaScript run-time on the front-end.
+These algorithms are written in Python and because of this not directly available to the \glsi{node} environment on the back-end and JavaScript run-time on the front-end.
 
 On the back-end it is possible to execute Python scripts with \gls{node} if the Python compiler is installed on the server.
 It is, however, not possible on the native devices.
-As of this, the algorithms is ported to TypeScript to make it available on both the back-end and front-end.
+Because of this, the algorithms are ported to \gls{typescript} to make them available on both the back-end and front-end.
 
-The algorithms are not optimized or re-factored, but it still increases performance considerable when running on \gls{node} as compared to running the scripts in Python.
+The algorithms are not optimized or re-factored, but the performance is still increased considerably when running on \gls{node} as compared to running the scripts in Python.
 Early measurements indicate a 10 times performance increase.

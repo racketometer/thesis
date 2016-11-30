@@ -2,51 +2,40 @@
 This chapter gives insight into the performance of the back-end application.
 
 \section{Optics}
-Optics is an analysis tool build by the \gls{meteor} developer team for use on
-\gls{graphql} servers. They currently support \gls{express}, \gls{hapi}, \gls{koa} and \gls{ruby} servers. It is a
-commercial product but also contains a free plan for developers.
+\Glsi{apollo:optics} is an analysis tool build by the \glsi{meteor} developer team for use on \glsi{graphql} servers. 
+They currently support \glsi{express}, \glsi{hapi}, \glsi{koa} and \glsi{ruby} servers. 
+It is a commercial product but also contains a free plan for developers.
 
-Optics was added to the project to get insights into the performance of the
-different queries the user can perform. The data can then be used to pinpoint
-performance bottlenecks and where you need to optimize your application.
+\Glsi{apollo:optics} was added to the project to get insights into the performance of the different queries the user can perform. 
+The data can then be used to pinpoint performance bottlenecks and where you need to optimize your application.
 
 \subsection{Performance analysis}
-Figure \ref{fig:withoutMeasurement} is a screenshot from Optics that shows the analysis for querying after
-the \verb+viewer+, including the \verb+user+ but excluding the users \verb+measurements+.
+Figure \ref{fig:withoutMeasurement} is a screenshot of the results from \Glsi{apollo:optics} that shows the analysis for querying after the \verb+viewer+, including the \verb+user+ but excluding the user's \verb+measurements+. 
+It shows that the average duration of the request takes 8.19 milliseconds to resolve. 
 
-\graphich{0.72}{withoutMeasurement}{Optics analysis for viewer, including the
+\graphich{0.72}{withoutMeasurement}{\Glsi{apollo:optics} analysis for viewer, including the
 user but excluding measurements}{fig:withoutMeasurement}
 
-\newpage
+That is pretty fast, but when asking for the \verb+user+'s \verb+measurements+ the request duration increases by a factor of 20 to 170 milliseconds, as illustrated on figure \ref{fig:withMeasurement}.
 
-Figure \ref{fig:withoutMeasurement} shows that the average duration for a \verb+viewer+ with
-a \verb+user+ only takes 8.19 millisecond to execute. That is pretty fast. But when
-asking for the \verb+users measurements+ the duration increases tenfolds, as
-illustrated on figure \ref{fig:withMeasurement}
+\graphich{0.72}{withMeasurement_short}{\Glsi{apollo:optics} analysis for viewer, including the user and measurements}{fig:withMeasurement}
 
-\graphich{1}{withMeasurement_short}{Optics analysis for viewer, including the user and measurements}{fig:withMeasurement}
+With \verb+measurements+, the query takes on average of 147 milliseconds to resolve.
+Those statistics are on a \verb+user+ with only a few measurements.
+From this we can easily see that when \verb+measurements+ grow we need to change how it is handled, e.g. adding ''pagination''. 
+When analysing closer it is clear that the \verb+data+ field on \verb+measurements+ is where performance is lost.
+When requesting without it the the result becomes 87.7 miliseconds, figure \ref{fig:withMeasurementWithoutData}.
 
-\newpage
+Without the \verb+data+ field on \verb+measurements+ the query was resolved in half the time. 
+This shows the power of \glsi{graphql} and emphasizes the penalty of asking for data you do not need.
 
-With \verb+measurements+, the query takes on average 147 milliseconds to resolve.
-Those statistics are on a \verb+user+ with only a few measurements. From this we can easily see that
-when \verb+measurements+ grow we need to change how it is handled. Adding "pagination"
-could be one way to solve it. When analyzing closer it becomes clear that the
-\verb+data+ field on \verb+measurements+ are where it hurts. When we query without it we get
-the result on figure \ref{fig:withMeasurementWithoutData}
-
-Without the \verb+data+ field on \verb+measurements+ the query was resolved in half the
-time. This shows the power of \gls{graphql} and proves that asking for data you
-don't need can be a big performance penalty.
-
-\graphich{0.9}{withMeasurementWithoutData_short}{Optics analysis for viewer,
+\graphich{0.72}{withMeasurementWithoutData_short}{\glsi{apollo:optics} analysis for viewer,
 including the user and measurements but excluding data}{fig:withMeasurementWithoutData}
 
-\newpage
 \subsection{Comparison}
-When comparing a few queries side by side it becomes very clear that the amount of data that
-is queried have a big impact on performance. Why login is slower than querying after a user
-can be tracked down to how the database is setup. Users are only indexed by id. So when login
-tries to find a user matching a specific email and password, it takes a lot longer than when
-looking for a user with a specific id. By adding indexes to the email, we could see a performance increase. 
-\graphich{0.6}{overview_optics}{Comparison of 4 different queries}{fig:overview_optics}
+When comparing a few queries side by side it becomes very clear that the amount of data that is queried have a big impact on performance. 
+Why \verb+login+ is slower than querying after a \verb+user+ can be tracked down to how the database is set up, i.e. users are only indexed by id and not e-mail.
+When \verb+login+ tries to find a user matching a specific email and password, it takes a lot longer than when looking for a user with a specific id. 
+By adding indexes to the email, we could see a performance increase. 
+
+\graphich{0.6}{overview_optics}{Comparison of 4 different queries analysed with \glsi{apollo:optics}}{fig:overview_optics}
