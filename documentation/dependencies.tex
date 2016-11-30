@@ -1,0 +1,163 @@
+\chapter{Dependencies}
+The project utilizes several external dependencies managed with the package manager \glsi{npm} for \glsi{node}.
+All but one of these dependencies are open-source software and there by free of use.
+They do however hold different licenses on the source code.
+Here follows lists of dependency packages and their respective licenses.
+
+\section{Back-end}
+\begin{longtabu*}{|l|L|}
+\hline
+\textbf{Package name} & \textbf{Use} \\ \hline 
+\endhead
+
+\hline
+\multicolumn{2}{r}{Continues on next page} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+\hline 
+\multicolumn{2}{|c|}{\textbf{Apache-2.0}} \\ 
+\hline 
+\verb+tslint+ & Code style \\ 
+\verb+typescript+ & Type safety for JavaScript \\ 
+\hline
+
+\multicolumn{2}{|c|}{\textbf{BSD-2-Clause}} \\ 
+\hline
+\verb+coveralls+ & Code coverage web service \\
+\hline 
+
+\multicolumn{2}{|c|}{\textbf{BSD-3-Clause}} \\ 
+\hline
+\verb+graphql+ & Communication contract \\
+\verb+istanbul+ & Code coverage calculator \\
+\verb+sinon+ & JavaScript mocking framework \\
+\hline 
+
+\multicolumn{2}{|c|}{\textbf{ISC}} \\ 
+\hline
+\verb+graphql-tools+ & Utility package for \glsi{graphql} \\
+\verb+nyc+ & \gls{cli} for \verb+istanbul+ \\
+\verb+rimraf+ & File deletion helper \\
+\verb+typed-graphql+ & \Gls{typedefinition} for \glsi{graphql} \\
+\hline 
+
+\multicolumn{2}{|c|}{\textbf{MIT}} \\ 
+\hline
+\verb+@types/body-parser+ & \Gls{typedefinition} for \verb+body-parser+ \\
+\verb+@types/chai+ & \Gls{typedefinition} for \verb+chai+ \\
+\verb+@types/email-validator+ & \Gls{typedefinition} for \verb+email-validator+ \\
+\verb+@types/express+ & \Gls{typedefinition} for \verb+express+ \\
+\verb+@types/hapi+ & \Gls{typedefinition} for \verb+hapi+ \\
+\verb+@types/koa+ & \Gls{typedefinition} for \verb+koa+ \\
+\verb+@types/mocha+ & \Gls{typedefinition} for \verb+mocha+ \\
+\verb+@types/mongoose+ & \Gls{typedefinition} for \verb+mongoose+ \\
+\verb+@types/mongoose-seeder+ & \Gls{typedefinition} for \verb+mongoose-seeder+ \\
+\verb+@types/node+ & \Gls{typedefinition} for global functionality in \glsi{node} \\
+\verb+@types/node-uuid+ & \Gls{typedefinition} for \verb+node-uuid+ \\
+\verb+@types/nodemailer+ & \Gls{typedefinition} for \verb+nodemailer+ \\
+\verb+@types/sinon+ & \Gls{typedefinition} for \verb+sinon+ \\
+\verb+awesome-typescript-loader+ & \glsi{webpack} loader for \glsi{typescript} \\
+\verb+body-parser+ & \Glsi{express} plugin to load \gls{http} body \\
+\verb+chai+ & Assertion framework for testing \\
+\verb+concurrently+ & Build tool to run several \glsi{node} scripts concurrently \\
+\verb+email-validator+ & E-mail validation logic \\
+\verb+express+ & Main web server\\
+\verb+graphql-server-express+ & \glsi{express} server set up with \glsi{graphql} \\
+\verb+graphql-subscriptions+ & \Glsi{graphql} subscriptions \\
+\verb+mocha+ & Testing framework \\
+\verb+mongoose+ & Model handling on \glsi{mongodb} \\
+\verb+mongoose-seeder+ & Build tool to seed \glsi{mongodb} with test data \\
+\verb+node-uuid+ & Generate \gls{uuid} strings \\
+\verb+nodemailer+ & \gls{smtp} framework \\
+\verb+nodemon+ & Build tool to monitor files and rerun \glsi{node} scripts \\
+\verb+optics-agent+ & \Glsi{graphql} performance analysis tool \\
+\verb+raw-loader+ & \glsi{webpack} loader to copy raw content \\
+\verb+ts-node+ & \Glsi{repl} for \gls{typescript} \\
+\verb+webpack+ & Main build tool, see \glsi{webpack} \\
+\verb+xmlhttprequest+ & \Glsi{http} request functionality for \glsi{node} \\
+\end{longtabu*} 
+
+
+\section{Front-end}
+\begin{longtabu*}{|l|L|}
+\hline
+\textbf{Package name} & \textbf{Use} \\ \hline 
+\endhead
+
+\hline
+\multicolumn{2}{r}{Continues on next page} \\
+\endfoot
+
+\hline
+\endlastfoot
+\multicolumn{2}{|c|}{\textbf{Apache-2.0}} \\ 
+\hline 
+\verb+nativescript-angular+ & Bindings for \glsi{nativescript} and \glsi{ng2} \\
+\verb+nativescript-dev-typescript+ & \Glsi{typescript} compile compatibility for \glsi{nativescript} \\
+\verb+nativescript-dev-webpack+ & \glsi{webpack} build configuration for \glsi{nativescript} \\
+\verb+rxjs+ & Reactive extensions for JavaScript \\
+\verb+tns-core-modules+ & Core \glsi{nativescript} \gls{ui} modules \\
+\verb+tslint+ & Code style \\
+\verb+typescript+ & Type safety for JavaScript \\
+\hline
+
+\multicolumn{2}{|c|}{\textbf{BSD-2-Clause}} \\ 
+\hline
+\verb+coveralls+ & Code coverage web service \\
+\hline
+
+\multicolumn{2}{|c|}{\textbf{BSD-3-Clause}} \\ 
+\hline
+\verb+graphql+ & Communication contract \\
+\verb+istanbul+ & Code coverage calculator \\
+\verb+sinon+ & JavaScript mocking framework \\
+\hline
+
+\multicolumn{2}{|c|}{\textbf{ISC}} \\ 
+\hline
+\verb+nyc+ & \Gls{cli} for \verb+istanbul+ \\
+\verb+rimraf+ & File deletion helper \\
+\verb+typed-graphql+ & \Gls{typedefinition} for \Glsi{graphql} \\
+\hline
+
+\multicolumn{2}{|c|}{\textbf{MIT}} \\ 
+\hline
+\verb+@angular/common+ & Common modules for \glsi{ng2} \\
+\verb+@angular/compiler+ & Compiler modules for \glsi{ng2} \\
+\verb+@angular/core+ & Core modules for \glsi{ng2} \\
+\verb+@angular/platform-browser+ & Web browser modules for \glsi{ng2} \\
+\verb+@angular/platform-browser-dynamic+ & Web browser modules for \glsi{ng2} \\
+\verb+@angular/platform-server+ & \glsi{node} modules for \glsi{ng2} \\
+\verb+@angular/router+ & Router modules for \glsi{ng2} \\
+\verb+@types/chai+ & \Gls{typedefinition} for \verb+chai+ \\
+\verb+@types/es6-shim+ & \Gls{typedefinition} for \verb+es6-shim+ \\
+\verb+@types/mocha+ & \Gls{typedefinition} for \verb+mocha+ \\
+\verb+@types/sinon+ & \Gls{typedefinition} for \verb+sinon+ \\
+\verb+angular2-apollo+ & \glsi{ng2} bindings to \glsi{apollo} \\
+\verb+apollo-client+ & \Glsi{apollo:client} framework\\
+\verb+babel-traverse+ & File tree management for \Glsi{babel} \\
+\verb+babel-types+ & Utility library for \Glsi{babel} \\
+\verb+babylon+ & JavaScript parser in \Glsi{babel} \\
+\verb+chai+ & Assertion framework for testing \\
+\verb+codelyzer+ & Code style for \glsi{ng2} \\
+\verb+email-validator+ & E-mail validation logic \\
+\verb+filewalker+ & File traversal for \glsi{node} \\
+\verb+github-contributors-list+ & Tool for contribution index of repository \\
+\verb+graphql-tag+ & Utility library for \glsi{graphql} \\
+\verb+lazy+ & Lazyloded lists for \glsi{node} \\
+\verb+mocha+ & Testing framework \\
+\verb+nativescript-bluetooth+ & Bluetooth integration for \Glsi{nativescript} \\
+\verb+nativescript-iqkeyboardmanager+ & Helper for \textit{iOS} keyboard management \\
+\verb+nativescript-social-share+ & Social sharing plugin for \Glsi{nativescript} \\
+\verb+ts-node+ & \Glsi{repl} for \Glsi{typescript} \\
+\verb+webpack+ & Main build tool, see \glsi{webpack} \\
+\verb+zone.js+ & Execution context helper for async operations \\
+\hline
+
+\multicolumn{2}{|c|}{\textbf{Commercial}} \\ 
+\hline
+\verb+nativescript-telerik-ui-pro+ & \Gls{ui} library for \Glsi{nativescript} \\
+\end{longtabu*}
