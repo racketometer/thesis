@@ -19,7 +19,7 @@ This approach makes it very obvious that the \verb+viewer+ 'area' is restricted 
 Every resource that requires an authenticated user will then be underneath the \verb+viewer+ type and every other endpoint are exposed outside the \verb+viewer+ object. 
 On figure \ref{fig:queryViewer} this is illustrated.
 
-\graphic{0.6}{query}{API documentation for the root query with the viewer and login queries returning the viewer type}{fig:queryViewer}
+\graphic{0.6}{query}{\gls{api} documentation for the root query with the viewer and login queries returning the viewer type}{fig:queryViewer}
 
 Notice that both of them returns a \verb+viewer+ type. 
 When logging in, the same \verb+viewer+ as you can get when asking for the \verb+viewer+ with your token, is returned. 
@@ -48,11 +48,11 @@ So all the mutations are hidden behind a \verb+MutationViewer+.
 This is shown on figure \ref{fig:mutationViewer}. 
 When passing the token to the viewer, it is checked in the database and the user owning the token, if any, is then passed down the graph so that the queries below the viewer know exactly who the user is. 
 
-\graphic{0.6}{mutation}{API documentation for the MutationViewer type}{fig:mutationViewer}
+\graphic{0.6}{mutation}{\gls{api} documentation for the MutationViewer type}{fig:mutationViewer}
 
 \subsection{Token generation}
 The token is generated on login and removed on logout. 
-An \verb+npm+ package named \verb+node-uuid+ is used to generate an RFC4122 v4 UUID, which is then stored with the user. 
+An \glsi{npm} package named \verb+node-uuid+ is used to generate an RFC4122 v4 \gls{uuid}, which is then stored with the user. 
 
 The odds of creating duplicate tokens when using RFC4122 v4 is extremely small. 
-On average it would take a few trillions of UUIDs to generate two duplicate tokens \citep{authentication:uuid}.
+On average it would take a few trillions of \gls{uuid}s to generate two duplicate tokens \citep{authentication:uuid}.

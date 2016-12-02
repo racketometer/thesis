@@ -1,17 +1,17 @@
 \section{Back-end architecture}
 
-The back-end application is written in \gls{typescript} and build with a framework called \gls{apollo}.
+The back-end application is written in \gls{typescript} and build with a framework called \glsi{apollo}.
 
-The back-end is spun up using \gls{node} and Express which is a framework to spin up a server in a \gls{node} environment.
+The back-end is spun up using \glsi{node} and \glsi{express} which is a framework to spin up a server in a \glsi{node} environment.
 
 The back-end contains 3 layers of abstraction which are illustrated on \ref{fig:backendLayer}.
 
 \graphic{1}{backend_architecture}{The back-end architecture layers}{fig:backendLayer}
 
-The top layer is the one that gets exposed to the users of the back-end. The schema consists of models and functions that the user can query for. The Schema is written in the GraphQL Schema Language.
+The top layer is the one that gets exposed to the users of the back-end. The schema consists of models and functions that the user can query for. The Schema is written in the \glsi{graphql} Schema Language.
 
-When the user queries, Apollo looks for a resolve function to resolve the query. This layer is called the Resolvers layer. Here, functions are defined to resolve specific queries related to the schema. 
+When the user queries, \glsi{apollo} looks for a resolve function to resolve the query. This layer is called the Resolvers layer. Here, functions are defined to resolve specific queries related to the schema.
 
-The data access layer contains 2 abstractions. The Connectors are where connections to databases are made and exposed to the above models layer. These databases are used in different ways. In the models layer, these are abstracted away so that the resolvers don't need to change, if the database or the \gls{orm} changes in the connectors layer. The models layer then exposes a generic API for finding, modifying, creating and removing persisted data
+The data access layer contains 2 abstractions. The Connectors are where connections to databases are made and exposed to the above models layer. These databases are used in different ways. In the models layer, these are abstracted away so that the resolvers don't need to change, if the database or the \gls{orm} changes in the connectors layer. The models layer then exposes a generic \gls{api} for finding, modifying, creating and removing persisted data
 
-Besides the 3 layers that make up the Apollo server, we also have 2 services. One for racket algorithms used to calculate features based on session data and an email service used to send out emails to users when they are signed up or when they change passwords.
+Besides the 3 layers that make up the \glsi{apollo} server, we also have 2 services. One for racket algorithms used to calculate features based on session data and an email service used to send out emails to users when they are signed up or when they change passwords.

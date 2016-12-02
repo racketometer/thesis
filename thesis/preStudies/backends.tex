@@ -8,14 +8,14 @@ This makes sure the clients do not become dependent on the back-end implementati
 As with the cross-platform frameworks, the back-end must support some kind of reactive data structure to follow modern standards.
 
 The \textit{must have} and \textit{nice to have} capabilities are summed up below.
-	
+
 \subsection*{Must have}
 \begin{itemize}
 	\item Be able to store and retrieve data.
 	\item Support authentication.
 \end{itemize}
-	
-\subsection*{Nice to have}	
+
+\subsection*{Nice to have}
 \begin{itemize}
 	\item Generic \gls{api}.
 	\item Reactive data. Updated data in the database should reflect on the client.
@@ -28,9 +28,9 @@ The \textit{must have} and \textit{nice to have} capabilities are summed up belo
 \\
 \textbf{Description:}
 \\
-\textit{Firebase} is a database service from Google, Inc. 
+\textit{Firebase} is a database service from Google, Inc.
 It has lots of features one do not normally see on a database, e.g. user authentication.
-It is a real-time database, i.e. the data is reactive, so whenever there is a change in the database, this is pushed to the clients. 
+It is a real-time database, i.e. the data is reactive, so whenever there is a change in the database, this is pushed to the clients.
 Pushing data into the database is done with \gls{json} and running specific functionality is not supported.
 It is however possible by use of a commercial product from  \textit{Zapier}\fxfatal{Reference to this?}.
 
@@ -38,40 +38,40 @@ It is however possible by use of a commercial product from  \textit{Zapier}\fxfa
 \textbf{Function:} Reactive Data storage
 \\
 \textbf{Database type:} None specific, free to choose.
-Client application interface is \textit{\gls{graphql}}.
+Client application interface is \glsi{graphql}.
 \\
 \textbf{Description:}
 \\
-\textit{Apollo} is a modern data stack that offers reactive data. 
+\glsi{apollo} is a modern data stack that offers reactive data.
 This means that your data will always be up-to-date if desired.
-It is a data stack provided by the \textit{Meteor} team, but as opposed to the \textit{Meteor} framework, \textit{Apollo} is to be used in any application. 
+It is a data stack provided by the \glsi{meteor} team, but as opposed to the \glsi{meteor} framework, \glsi{apollo} is to be used in any application.
 
-There are integration guides for \textit{\gls{ng2}}, \textit{\gls{redux}}, \textit{Meteor}, \textit{\gls{react}} and \textit{React native}, but one should be able to integrate it into any JavaScript front-end.
-\textit{Apollo} consists of two parts. 
-A schema that describes the type of data available on the server and a query language, \textit{\gls{graphql}}, that enables the client to describe the data it needs. 
-This decouples the client from the database type as \textit{\gls{graphql}} is only a query specification.
-\textit{Apollo} can query different types of database, e.g. \textit{\gls{mongodb}} and \textit{\gls{mysql}}, without the client realising it.
+There are integration guides for \glsi{ng2}, \glsi{redux}, \glsi{meteor}, \glsi{react} and \textit{React native}, but one should be able to integrate it into any JavaScript front-end.
+\glsi{apollo} consists of two parts.
+A schema that describes the type of data available on the server and a query language, \glsi{graphql}, that enables the client to describe the data it needs.
+This decouples the client from the database type as \glsi{graphql} is only a query specification.
+\glsi{apollo} can query different types of databases, e.g. \glsi{mongodb} and \glsi{mysql}, without the client realising it.
 As the client specifies what properties are needed, no unused data is send over the wire.
 
 \subsection*{Requirements summary}
 This table shows how each framework and service fulfills the specified requirements.
-	
+
 	\begin{tabularx}{\textwidth}{|l|C C|}
-	\hline 
-	 & Firebase & Apollo \\ 
-	\hline 
-	\textbf{Be able to store and retrieve data} & \cmark & \cmark \\ 
 	\hline
-	\textbf{Support authentication} & \cmark & \cmark \\ 
-	\hline 
-	Generic \gls{api} & \xmark & \cmark \\ 
-	\hline 
-	Reactive data & \cmark & \cmark \\ 
-	\hline 	
-	\end{tabularx} 
-	
+	 & Firebase & \glsi{apollo} \\
+	\hline
+	\textbf{Be able to store and retrieve data} & \cmark & \cmark \\
+	\hline
+	\textbf{Support authentication} & \cmark & \cmark \\
+	\hline
+	Generic \gls{api} & \xmark & \cmark \\
+	\hline
+	Reactive data & \cmark & \cmark \\
+	\hline
+	\end{tabularx}
+
 \subsection*{Conclusion}
-\textit{Apollo} fulfills all of the requirements and provides an excellent separation from the clients and server.
-With \textit{Firebase} the client application is bound to it. 
-\textit{Apollo} lets the developer pick what database to be used and can support several, and different types, of databases. 
-This is at the expense of more work by the developer but a considerable better flexibility why \textit{Apollo} is the selected back-end.
+\glsi{apollo} fulfills all of the requirements and provides an excellent separation from the clients and server.
+With \textit{Firebase} the client application is bound to it.
+\glsi{apollo} lets the developer pick what database to be used and can support several, and different types, of databases.
+This is at the expense of more work by the developer but a considerable better flexibility why \glsi{apollo} is the selected back-end.

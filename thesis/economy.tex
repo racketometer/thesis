@@ -1,0 +1,41 @@
+\chapter{Project economy}
+When deciding the price model of the product, the total costs of the deployed system and development tools should be compared to the consumers expectations.
+
+Racket prices are around kr. 1000 - 1499 and the most owned sport-gadgets was \Glsi{endomondo}, free with premium subscription of \$2.5 and \glsi{gopro} with price range of \$230 - \$480, chapter \ref{ch:userSurvey}.
+
+\section{Development}
+The goal of this project was to create the products with \gls{oss} and it should preferably be free.
+The project uses a single package that is a commercial product, see chapter \ref{ch:dependencies}.
+As this package could be substituted by other packages the economic foot print of the libraries and frameworks used for the project could become zero.
+
+\section{Production}
+There are costs to running the applications in production.
+The platform specific application stores requires developer licences that comes with a fee.
+These are \$25 one-time \citep{economy:play} and \$99 per year \citep{economy:appStore} for \textit{Google Play} and \textit{Apple AppStore} respectively.
+
+Several solutions are available for hosting the back-end.
+As it is a \glsi{node} application any provider either serving a \glsi{node} environment or a container run-time can be used.
+In table \ref{tbl:hosting} is a short overview of possible providers and their estimated prices.
+All the container providers are only billing actual traffic to the running instances.
+This means the actual costs of running the back-end can differ significantly from the listed prices according to the popularity of the product.
+
+A \gls{dns} is \textit{nice to have}, for the front-end application to communicate with the back-end, without knowing the location, i.e. IP address.
+The costs of this can be ignored, as the pricing is typically low and it is used for all providers.
+
+\begin{table}
+\caption{Price comparison for back-end hosting}
+\label{tbl:hosting}
+
+\begin{tabularx}{\textwidth}{LcL}
+\textbf{Provider} & \textbf{Price per month} & \textbf{Type} \\
+\hline 
+Amazon EC2                  & \$0.1 & Container \\
+DigitalOcean                & \$10  & Container \\
+Google Container Engine     & \$5   & Container \\
+Heroku                      & \$7   & Container \\
+Microsoft Azure             & \$14  & Container \\
+mLab                        & \$15  & Only \glsi{mongodb} \\
+Evennode                    & \$14  & \glsi{node} including \glsi{mongodb} \\
+\hline
+\end{tabularx} 
+\end{table}
