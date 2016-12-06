@@ -1,0 +1,26 @@
+\chapter{Testing}
+This chapter describes how testing is set up and managed a cross the applications.
+
+\section{Tools}
+The back-end and front-end both utilize the same tools for testing.
+\glsi{mocha} is the test-runner used for running the tests.
+\glsi{sinon} is used for spys, mocks and stubs. \glsi{chai} is used as the assertion library.
+
+\glsi{istanbul} calculates coverage and \glsi{coveralls} posts it to their web service and adds the information to \glsi{github} in form of comments on pull-requests and as a badge for the master branch coverage.
+On pull-requests you also get information about coverage increase and decrease.
+
+Tests are also run on \glsi{travis}, see chapter \fxfatal{add ref to CI chapter}
+
+\section{Running tests}
+The front-end and back-end uses the same commands for running tests and posting coverage.
+To run tests on the local development machine, environment variables need to be set before running the below command in the root of the specific projects folder, see section \fxfatal{add environment variable section ref}.
+
+The following command will run all tests against the test database.
+The database is reseeded each time to ensure the same data is available. 
+Coverage results are output to the \verb+coverage+ folder.
+
+\verb+npm run test+
+
+To post the calculated code coverage to \glsi{coveralls} use the below command.
+
+\verb+npm run coverage+
