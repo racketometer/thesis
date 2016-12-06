@@ -1,0 +1,54 @@
+\chapter{Architecture}
+This chapter describes the software architectures for the front and back-end applications.
+It also covers what major frameworks are used and to what purpose.
+
+\section{Frameworks}
+The system is build with different frameworks as seen on figure  \ref{fig:frameworkArchitecture}.
+The front-end application uses \glsi{ng2} as the main framework.
+It utilizes \glsi{nativescript} as the \gls{ui} rendering layer and \glsi{graphql} as the back-end communication specification and \glsi{apollo:client} for request execution.
+
+The back-end uses the \glsi{apollo:server} framework to manage communications with the \glsi{graphql} specification and uses \glsi{mongodb} for data persistence.
+
+\graphic{1}{frameworkArchitecture}{System framework architecture}{fig:frameworkArchitecture}
+
+\section{Software architecture}
+Each application uses different architectures and the source code is structured differently.
+
+\subsection{Front-end}
+The front-end application is based on a component structured \gls{mvc} architecture, that is standard for \glsi{ng2} applications.
+Each component consists of several files responsible for different parts of the component as shown on figure \ref{fig:componentFiles}.
+Note that the \verb+html+ files do not comply with the \gls{html} specification.
+Instead it is an enhanced \gls{xml} notation with \glsi{nativescript} and custom components.
+
+\graphic{0.45}{componentFiles}{Source files for a component}{fig:componentFiles}
+
+The naming convention used is as follows with the exception of common style sheets.
+
+\verb+<name>.<type>.<extension>+
+
+In \glsi{ng2} component declarations, listing \ref{lst:component}, file names are omitting platform names as seen on line 4.
+This is due to the \glsi{nativescript} tool-chain.
+If a file is not found, it adds the targeted platform to the last part of the file name to match platform specific versions.
+The purpose of this is to allow target specific details, e.g. styling.
+
+\lstsetjavascript
+\begin{lstlisting}[caption=Login component declaration, label=lst:component]
+@Component({
+  selector: "rom-login",
+  templateUrl: "login/login.component.html",
+  styleUrls: ["login/login-common.css", "login/login.component.css"],
+})
+export class LoginComponent implements OnInit {
+  ...
+}
+\end{lstlisting}
+
+\subsection{Back-end}
+The back-end application is based on a three layer architecture, as seen on figure \ref{fig:backendArchitecture}.
+The \textit{Schema} layer handles \gls{api} exposure to clients and is written in \glsi{graphql} schema language.
+The \textit{Resolvers} layer handles field resolvement for queries.
+This is where decisions on where data is to be fetched from is handled.
+The bottom layer is a service layer including data access and utility services.
+This includes database connections and other data access logic as well as e-mail services and data analysis algorithms.
+
+\graphic{1}{backend_architecture}{Back-end architecture}{fig:backendArchitecture}

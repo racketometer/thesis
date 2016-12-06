@@ -8,7 +8,7 @@ The back-end contains 3 layers of abstraction which are illustrated on \ref{fig:
 
 \graphic{1}{backend_architecture}{The back-end architecture layers}{fig:backendLayer}
 
-The top layer is the one that gets exposed to the users of the back-end. The schema consists of models and functions that the user can query for. The Schema is written in the \glsi{graphql} Schema Language.
+The top layer is the one that gets exposed to the users of the back-end. The schema consists of models and functions that the user can query for. The Schema is written in the \glsi{graphql} schema language.
 
 When the user queries, \glsi{apollo} looks for a resolve function to resolve the query. This layer is called the Resolvers layer. Here, functions are defined to resolve specific queries related to the schema.
 
