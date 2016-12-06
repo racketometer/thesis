@@ -1,0 +1,9 @@
+\section{Deployment model}
+The deployment model is meant to illustrate where the different software packages are deployed, as shown on figure \ref{deploymentmodel}.
+
+The front-end codebase is compiled into two different file extensions, i.e. \verb+.jar+ for \textit{Android} and \verb+.app+ for \textit{iOS}. 
+The compiled files are then deployed to their respective devices or uploaded to each platform's \gls{appstore}.
+
+The back-end codebase is deployed to a \glsi{heroku} infrastructure running \glsi{node} and setup with environment variables, see section \ref{sec:staging}, to communicate with a \glsi{mongodb} instance hosted on \glsi{mlab}.
+
+\graphic{1}{deployment}{Software deployment model}{deploymentmodel}

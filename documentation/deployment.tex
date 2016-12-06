@@ -1,5 +1,12 @@
 \chapter{Deployment}
-This chapter describes the how the applications are distributed and deployed.
+This chapter describes how the applications are distributed and deployed and how the production systems are setup.
+
+\section{Deployment model}
+The software packages are deployed as a distributed system as shown on figure \ref{fig:deploymentModel}.
+The front-end codebase is compiled to native applications on the targeted platforms and deployed to the devices.
+The back-end codebase is deployed to a \glsi{heroku} infrastructure running \glsi{node} and is setup to communicate with a \glsi{mongodb} instance hosted on \glsi{mlab}, see section \ref{sec:staging}.
+
+\graphic{1}{deployment}{Software deployment model}{fig:deploymentModel}
 
 \section{Back-end}
 The back-end application is deployed on \glsi{heroku} with free hosting. This is because the product is still in a beta state and the cheapest solution, i.e free, is chosen.
@@ -32,6 +39,7 @@ This compiles the \gls{typescript} code and outputs it in the \verb+dist+ folder
 This starts the \glsi{node} server with \verb+dist/server.js+ as entry point.
 
 \subsection{Staging}
+\label{sec:staging}
 As the application uses staging for different environments, several environment variables need to be set.
 Specifically the \verb+NODE_ENV+ and the \verb+ROM_DB_PROD+ variable. 
 The \verb+NODE_ENV+ variable defines if a database seed should be applied on startup or not. 

@@ -19,6 +19,7 @@ The second level is integration tests.
 These test the application on every level, with nothing mocked away. 
 
 \subsubsection{Staging}
+\label{sec:staging}
 A staging environment is used to make sure that tests are run independently of the production environment. 
 Two environment variables are important in this context.
 \verb+NODE_ENV+ and \verb+ROM_DB_TEST+ are set on the \glsi{travis} server to make sure that the right things happen.
