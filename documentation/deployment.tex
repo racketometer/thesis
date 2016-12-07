@@ -9,34 +9,37 @@ The back-end codebase is deployed to a \glsi{heroku} infrastructure running \gls
 \graphic{1}{deployment}{Software deployment model}{fig:deploymentModel}
 
 \section{Back-end}
-The back-end application is deployed on \glsi{heroku} with free hosting. This is because the product is still in a beta state and the cheapest solution, i.e free, is chosen.
+The back-end application is deployed on \glsi{heroku} with free hosting. 
+This is because the product is still in a beta state and the cheapest solution, i.e free, is chosen.
 
-\Glsi{heroku} have a guide for deploying a \glsi{node} application on their servers which breaks down the different commands \citep{documentation:deployment:heroku}.
+When deploying a \glsi{node} application on \glsi{heroku}, you deploy your source code from a local git repository.
+\Glsi{heroku} then builds the application with \glsi{npm} scripts and starts the application on the running web instance as illustrated on \ref{fig:deploymentFlow}.
 
-When deploying a \glsi{node} application on \glsi{heroku}, you deploy your \glsi{github} repository. 
-This means that you are not deploying your compiled code, but rather your source code.
-This has the side effect that you need your build chain installed on the \glsi{node} server.
-To make sure that \glsi{npm} installs your developer dependencies, the \verb+NPM_CONFIG_PRODUCTION+ environment variable needs to be set to \verb+false+.
-This is done with the following command in the \gls{cli}
+\graphic{0.8}{deploymentFlow}{\Glsi{heroku} deployment flow}{fig:deploymentFlow}
+
+\subsection{Existing server}
+To deploy to the existing server push git changes to the \glsi{heroku} remote with the following command.
+
+\verb+git push heroku master+
+
+\subsection{New server}
+To deploy the application to a new server follow the \glsi{heroku} guide for deploying a \glsi{node} application on their servers which breaks down the different commands \citep{documentation:deployment:heroku}.
+
+When the application is deployed, the \verb+npm install+ command is automatically run to install the dependencies.
+To make sure that \glsi{npm} installs the developer dependencies, the \verb+NPM_CONFIG_PRODUCTION+ environment variable is set to \verb+false+ with the following command in the \glsi{heroku} \gls{cli}.
 
 \verb+heroku config:set NPM_CONFIG_PRODUCITON=false+
 
-\Glsi{heroku} allows for the use of a \verb+Procfile+ to specify commands for different types of applications \citep{documentation:deployment:heroku:procfile}.
-If no \verb+Procfile+ is provided, \glsi{heroku} will run the \verb+npm start+ command.
-That command is used under development and runs a development server.
-Therefore a \verb+Procfile+ is provided to run a different command than \verb+npm start+.
-
-When the application is deployed, the \verb+npm install+ command is automatically run to install the dependencies. 
-To make sure that the source code gets compiled before the server starts, a \verb+postinstall+ script is added to the \verb+package.json+ file.
-
-The \verb+postinstall+ script will run the build chain through \verb+webpack+. 
-This compiles the \gls{typescript} code and outputs it in the \verb+dist+ folder.
-
-\Glsi{heroku} then looks at the \verb+Procfile+ for a web command, since this is a web application and runs this command:
+\glsi{heroku} is configured with a \verb+Procfile+ \citep{documentation:deployment:heroku:procfile}, with the single command below. This defines how the web application is started.
 
 \verb+web: node dist/server.js+
 
-This starts the \glsi{node} server with \verb+dist/server.js+ as entry point.
+If no \verb+Procfile+ is provided, \glsi{heroku} will run the \verb+npm start+ command.
+That command is used under development and runs a development server.
+Therefore a \verb+Procfile+ is provided to run a different command.
+
+To make sure that the source code gets compiled before the server starts, a \verb+postinstall+ script is added to the \verb+package.json+ file.
+This script will run the \glsi{webpack} build chain that compiles the \gls{typescript} code and outputs it to the \verb+dist+ folder.
 
 \subsection{Staging}
 \label{sec:staging}

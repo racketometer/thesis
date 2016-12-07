@@ -62,21 +62,24 @@ It takes an \verb+AutoUser+ as an input parameter.
 The \verb+changePassword+ function can be seen on figure \ref{fig:changePassword}
 \graphich{0.6}{api/changePasswordType}{The changePassword function with arguments}{fig:changePassword}
 
-\section{GraphiQL}
-When using \glsi{graphql}, you get \glsi{graphiql} out of the box.
-This means that you can have a live documentation of your schema that you can use both to browse the documentation but also query against the application.
-This is useful for both for the back-end developer that does not need to maintain a the \gls{api} documentation and also for the front-end developer that can browse the schema live instead of constantly needing to ask for a new copy of the \gls{api} documentation.
+\section{Interactive API exploration}
+When using \glsi{graphql}, \glsi{graphiql} is included.
+\Glsi{graphiql} is a live web documentation of the schema that can be used to browse the documentation and also query against the application.
+This is useful for both for the back-end developer that does not need to maintain an \gls{api} documentation and also for the front-end developer that can browse the schema live instead of referring to a hard copy, that might be out dated.
 
-An example of how you can use \glsi{graphiql} is shown on figure \ref{fig:graphiql}. 
-The column to the far left is where you can write your queries.
-The center column is where the \glsi{graphql} responses are shown.
-To the far right the documentation explorer is viewed.
-In this example, 2 queries are already defined and named. 
-With this you can use the \verb+Play+ button to run one of them seperately.
-The data in the middle column is from the query \verb+login+.
-This shows that it only returns exactly the 2 parameters asked for, when queried.
+An example of how you can use \glsi{graphiql} is shown on figure \ref{fig:graphiql}.
+The view is split into three columns.
+The column to the far left is where you can write queries.
+The center column is for the \glsi{graphql} responses.
+To the right is the documentation explorer.
 
-\Glsi{graphiql} is available on the following \gls{url}: \newline
+The example shows a login query using \verb+email+ and \verb+password+ variables.
+When pushing the \textit{Play} button, the query is run and the response is shown with exactly the two parameters asked for, i.e. \verb+_id+ and \verb+token+.
+
+\Glsi{graphiql} for the running back-end is available on the following \gls{url}: \newline
 \url{https://polar-reef-40902.herokuapp.com/graphiql}
+
+Follow this \gls{url} for a prepared query setup: \newline
+\url{https://goo.gl/pQjOko}
 
 \graphic{1}{api/graphiql}{\Glsi{graphiql} web interface}{fig:graphiql}
