@@ -3,12 +3,13 @@ This section describes how data persistence is obtained and also give insight in
 
 To persist data this project uses \glsi{mongodb} which is a \gls{documentdb}.
 When working with \glspl{documentdb} you often get a more flat and embedded data model than when working with relational databases. 
-This is also reflected in our database schema on figure \ref{fig:dbSchema} which only has 2 entities which will translate into 2 collections in the \glsi{mongodb}.
+This is also reflected in our database schema on figure \ref{fig:dbSchema} which only has two entities which will translate into two collections in the \glsi{mongodb}.
 
-A \glsi{node} environment is used on the server to communicate with a standalone \glsi{mongodb}.
+The back-end application communicates with a \glsi{mongodb} instance hosted with \glsi{mlab} when running in production.
+A local instance can be used when running development by use of environment variables, see section \ref{sec:staging} for details.
 
 \subsection{Database schema}
-After analyzing the domain and the requirements the following database schema was created to fulfill our needs.
+After analysing the domain and the requirements the following database schema was created to fulfill our needs.
 
 It contains 2 collections, i.e. \textit{Measurement} and \textit{User}. \textit{User}s represent all possible users of the system, both players, consultants and coaches. 
 They are then distinguished with flags on the document (\verb+isConsultant+ and \verb+isCoach+).

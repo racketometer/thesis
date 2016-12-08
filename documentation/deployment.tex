@@ -51,4 +51,7 @@ This is used on the testing stage so that integration tests are always run again
 
 In production we do not ever want to reseed our database and therefore the \verb+NODE_ENV+ variable is set to \verb+prod+.
 
-Lastly \verb+ROM_DB_PROD+ needs to be set to the production \glsi{mongodb} instance.
+Lastly \verb+ROM_DB_PROD+ needs to be set to the \gls{url} of the production \glsi{mongodb} instance.
+For a complete reference on environment variables see chapter \ref{ch:environmentVariables}.
+
+The \glsi{mongodb} for production is hosted on \glsi{mlab} as Database-as-a-Service web service.
