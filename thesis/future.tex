@@ -1,0 +1,42 @@
+\chapter{Future}
+This chapter will describe the short and long term plans for future development of the product.
+
+\section{Short term}
+This section will describe the short term plans for what we want to achieve over the coming month.
+
+On the back-end better encapsulment of code should be practiced.
+Dependency injection should be setup and all ''loose code'' needs to be wrapped up in a function or class.
+
+More tests needs to be written and code coverage needs to be increased.
+Testing is currently only on a \gls{poc} stage. The work getting it setup is done and a few tests are written.
+The testing setup also needs to be optimized regarding to code coverage.
+Integration tests are currently run together with unit tests. 
+These should be seperate because integration tests spin up a lot of code that gives a false sense of what is tested, when looking at the coverage report.
+We also wish to get in-app testing working instead of only having business login unit tests on the front-end application.
+
+Integration with the \glsi{bluetooth} sensor needs to be setup so that we can demonstrate \glsi{bluetooth} data transmission on the mobile application.
+Currently we can scan and connect with \glsi{bluetooth} devices.
+
+\section{Long term}
+After using \glsi{nativescript} during this project, it has been the source of the most frustrations. 
+Due to this we will consider trying out one of the alternatives that we originally wrote off during the pre-studies. See section \ref{sec:crossplatform}. 
+
+\glsi{reactnative} is the alternative we are considering to atleast try out to see if it is a product that can deliver a better developer experience as well as leverage the requirements the mobile application have.
+
+UI redesign is also high on the list of improvements we want to make.
+Getting an external UI/UX designer to work on how the application should look could be a major improvement on the product.
+
+There are some key features that did not make it for the deadline of the project.
+\begin{itemize}  
+\item Profile view - a view where users can change their user and profile settings.
+\item Ranking - a system where you can rank yourself against people in the same club and / or friends.
+\item History - a view where you can browse all your previous sessions.
+\item Share - users should be able to share session on social media.
+\end{itemize}
+
+Some key features that the project as a whole is missing, but was not inside the initial scope of the project is listed below.
+\begin{itemize}  
+\item Website - a web portal to compliment the mobile application.
+\item Achievements - an achievement system for reaching different milestones during your sessions.
+\item Club management - a club management portal on the web that integrates with the user data.
+\end{itemize}
