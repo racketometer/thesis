@@ -39,7 +39,8 @@ Since this is the unique feature, it is also going to be the focus point for the
 
 \graphic{0.8}{rich_vision_with_focus.png}{The parts this project will focus on}{fig:introduction:visionBoundaries}
 
-\section{External collaboration}\label{sec:externalCollaboration}
+\section{External collaboration}
+\label{sec:externalCollaboration}
 As this is a software project we have allied with two external consultants.
 They are responsible for the development of the physical smart racket and the electronics inside.
 Further more they have great knowledge of the badminton community and a great personal network with club managers, coaches and players that can be used for testing, research of user demands and alike.
@@ -47,36 +48,39 @@ They will be referred to as the ''consultants'' throughout this report.
 An interview with the consultants were conducted in the initial phase of the project as seen in appendix \ref{appendix:consultantsInterview}.
 
 \section{Work process}
-The project process is managed with the agile \gls{scrum} development framework as this is the most popular methodology in software development \citep{introduction:work:scrum}. 
-The flow of events utilized in the process are as follows.
-A grooming session is held to discuss and define new tasks for the project.
-This is a returning event in every sprint and makes sure the \textit{Backlog} is prioritized and up to date.
+The project process is managed with the agile \glsi{scrum} development framework as this is the most popular methodology in software development \citep{introduction:work:scrum}. 
+In the initial weeks of the project, sprints with one and two weeks duration was tested out.
+The latter fit us the most as it covered enough work to make progress and little enough to assess.
+The flow of events in the sprint process are as follows.
+A grooming session is held, at the end of each sprint, to discuss and define new tasks for the project to make sure the \textit{Backlog} is prioritized and up to date.
 
-The \textit{Backlog} is holding all tasks to be carried out.
-They are all estimated with \glspl{scrum:point}, an arbitrary value of how large a given task is.
-This is an estimate and the team is ''learning by doing'' what a single \gls{scrum:point} means.
-The number of points to burn down each sprint is set by comparing the former sprints total burndown and the expected available resources in the coming sprint.
-Each sprint is set for two weeks. 
-This was evaluated in the initial weeks of the project where sprints with one and two weeks duration was tested out.
-The latter one was what fit us the most as this covered enough work to make progress and little enough to assess.
+The \textit{Backlog} is holding all the tasks to be carried out, each of which are estimated with \glspli{scrum:point}, an arbitrary value of how large a given task is.
+This is an estimate and the team is ''learning by doing'' what a single \glsi{scrum:point} means.
+The number of points to plan in each sprint is set, by comparing the former sprints total throughput and the expected available resources in the coming sprint.
+Over the nine sprints we have completed around 120 \glspli{scrum:point} in each sprint as seen on figure \ref{fig:introduction:throughput}.
 
-In the grooming sessions a non-formal \textit{retrospective}, i.e. reflection of the sprint, is held. 
-If any tasks were not finished in the current sprint, it is decided if they should be moved into the new sprint or the \textit{Backlog} for latter completion.
+\graphic{1}{throughput}{Throughput graph showing the completed \glspli{scrum:point} of each week}{fig:introduction:throughput}
+
+In the grooming sessions a non-formal \textit{retrospective}, i.e. reflection of the sprint, was held. 
+If any tasks were not finished in the current sprint, it was decided if they should be moved into the new sprint or the \textit{Backlog} for later completion.
 
 Visualization of tasks and their states is done with an online \gls{scrum:board}.
-The tool used was decided in a pre-study, see section \ref{preStudy:scrum}.
-On figure \ref{fig:introduction:scrumBoard} is a snapshot of the sprint at the time of writing.
-On the left, column \textit{Ready}, is the tasks ready to be completed in the sprint.
-Just left of this column is a collapsed column with the \textit{Backlog}.
-Next to this is the \textit{In Progress} column holding all tasks currently being worked upon.
+The tool used is \textit{Waffle}, as was decided in a pre-study, section \ref{preStudy:scrum}.
+On figure \ref{fig:introduction:scrumBoard} is a screenshot of the sprint at the time of writing.
+The \textit{Backlog} is in the collapsed column to the far left.
+Next is the \textit{Ready} column, with tasks ready to be completed in the sprint.
+Next is the \textit{In Progress} column holding all tasks currently being worked upon.
 After a task is done it moves to the \textit{Review} column where it is reviewed by a team member.
-When the review is done and there are no comments or they are resolved, the tasks is placed in the \textit{Done} column.
+When the review has approved the changes the tasks are placed in the \textit{Done} column.
 
-To make the management of tasks as easy as possible, the used tool synchronizes with \textit{Git} branches, i.e. in progress work in version control. 
+\graphic{1}{scrumBoard}{Screenshot of the \textit{Waffle} scrum board}{fig:introduction:scrumBoard}
+
+To make the management of tasks as easy as possible, the used tool synchronizes with \textit{Git} branches, i.e. in-progress work in version control. 
 When a new branch is created in \textit{Git}, referencing a task number, it is moved to \textit{In Progress}. 
-When a \textit{Pull Request}, i.e. the changes are ready to be merged into the \textit{master} branch, the task is moved to \textit{Review} and finally if the \textit{Pull Request} is closed and merged, the task is put in \textit{Done}.
+When a \textit{Pull Request}, i.e. changes ready to be merged into the \textit{master} branch, is opened, the task is moved to \textit{Review} and finally if the \textit{Pull Request} is merged and closed, the task is put in \textit{Done}.
 
-\graphic{1}{scrumBoard}{Snapshot of the Scrum board}{fig:introduction:scrumBoard}
+The flow and use of this board has been nothing but fantastic.
+We have had great overview of the tasks and the development as well as thesis and documentation writing have been handled with ease.
 
 \section{Roadmap}
 In planning what we can achieve during this project, a roadmap was created with milestones and dates. 
