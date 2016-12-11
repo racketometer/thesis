@@ -1,0 +1,38 @@
+\chapter{Risk analysis}
+To help prioritize the \textit{backlog} we made a simple risk analysis of decisions and dependencies by multiplying the impact on the project with the probability of occurrence. Here follows short descriptions of each risk topic and in table \ref{tbl:risk} is a summary of the calculated risks for each.
+
+\subsubsection*{Racket sensor delivery}
+The racket sensor development is handled by external collaborators and because it is still under development, there is a risk of the development not completing in time for this projects end.
+
+\subsubsection*{Framework development and stability}
+At the beginning of the software development, we decided to use several non-stable frameworks.
+\Glsi{ng2} was publicly available as a release candidate, in version $2.0.0-rc.4$, the \glsi{graphql} specification was in technical preview and \glsi{apollo} was in version $0.4.13$ and $0.2.6$ for \glsi{apollo:client} and \glsi{apollo:server} respectively, both below a stable version $1.0$.
+
+All these posed a risk to us, as we relied on non-stable \glspl{api}.
+The project did set out to explore cutting edge technologies, so this was expected but the different frameworks have different impact on the project.
+
+\subsubsection*{Team collaboration}
+The team consists of only two persons why the impact of illness or alike can have great consequence on the development.
+To minimize the impact of this, there are no predefined task areas for the team members.
+This makes progress possible, in case a developer gets ill, as knowledge on both front- and back-end applications are kept shared.
+
+\subsubsection*{Product justification}
+Even though a product makes it to the shelves, it is not a success if no one buys it.
+To minimize the risk of this, tasks to understand users, both players and consultants, are prioritized to the initial phase.
+
+\begin{table}
+\caption{Calculated risks for the project rated 1 - 10}
+\label{tbl:risk}
+\begin{tabularx}{\textwidth}{|l|C|C|C|}
+\hline
+\textbf{Description} & \textbf{Probability} & \textbf{Impact} & \textbf{Risk} \\
+\hline
+Racket sensor delivery      & 4 &  5 & 20 \\
+Stability of \glsi{ng2}     & 8 &  1 &  8 \\
+Stability of \glsi{graphql} & 2 &  3 &  6 \\
+Stability of \glsi{apollo}  & 8 &  2 & 16 \\
+Team collaboration          & 8 &  3 & 24 \\
+Product justification       & 4 & 10 & 40 \\
+\hline
+\end{tabularx}
+\end{table}
