@@ -31,16 +31,17 @@
 % ¤¤ Add multipage pdf ¤¤ %
 % Parameters
 %  #1: Width ratio of full page
-%  #2: Relative path from graphics folder
+%  #2: Rotation
+%  #3: Relative path from graphics folder
 %
 % \ajoutpdf{1}{1.jpg}
 %
 % From: http://tex.stackexchange.com/a/324786
 
-\newcommand{\ajoutpdf}[2] {
-    \pdfximage{graphics/#2}
+\newcommand{\ajoutpdf}[3] {
+    \pdfximage{graphics/#3}
     \multido{\i=1+1}{\the\pdflastximagepages}{
-        \includegraphics[page=\i,scale=#1]{graphics/#2}
+        \includegraphics[page=\i,scale=#1,angle=#2,origin=c]{graphics/#3}
         \newpage
     }
 }
