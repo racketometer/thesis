@@ -1,0 +1,21 @@
+\chapter*{Abstract}
+This document describes the process of creating the software platform for the sport gadget \textit{Racket O Meter}, a multi-sensor hardware device implemented inside badminton rackets to allow for detailed measurements of movement during a badminton performance, provided by external collaborators.
+
+The \glsi{scrum} methodology was used to manage the agile software development and to structure the work process.
+By analysing expectations and use cases with user surveys and interviews, the requirements were defined and prioritized before software development commenced.
+
+The developed software applications aimed to allow players, coaches and consultants to manage and measure badminton performances in an accessible way.
+
+Two applications were created.
+A front-end cross-platform mobile application allowing the user to communicate with the racket and persisting data on the back-end.
+It further more allows consultants to create new users and more.
+The applications communicate with the sensor devices with \gls{bluetooth:ble} and the back-end with the internet.
+
+The back-end application is a web \gls{api} providing means of the mobile application to persist data and perform data analysis.
+It handles user management and authentication as well.
+
+The project results are a working cross-platform mobile application, deployed to \textit{Android}'s app store \textit{Google Play}.
+It allows for consultants to create new users and players to login with auto-generated and personal passwords.
+The development of the racket sensors was delayed and not ready for testing.
+Because of this, a representative peripheral device was used to test \glsi{bluetooth:ble} communications.
+Further more a back-end application have been developed with the afore mentioned functionality and deployed to \glsi{heroku}.
