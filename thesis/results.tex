@@ -1,0 +1,33 @@
+\chapter{Results}
+There are three major software results of this project, the two mobile applications and the back-end server application.
+The mobile applications are written in the cross-platform framework \glsi{nativescript} and are native applications with a shared code base, see figure \ref{fig:results:screenshot}.
+It is deployed and available on the \textit{Android} app store \textit{Google Play}.
+The applications provide multiple features.
+
+\graphic{1}{appScreenshot}{Screenshot of the login screen on a \textit{Nexus 10} emulator running \textit{Android} $6.0$}{fig:results:screenshot}
+
+\begin{itemize}
+\item User login - authentication against back-end application
+\item User type specific dashboards - different view if user is consultant or user
+\item \textit{New user} functionality - for consultants and coaches
+\item Forced password change - for users with auto-generated passwords
+\item Communication with peripheral devices over \glsi{bluetooth:ble}
+\item Server communication compliant with the \glsi{graphql} specification over the internet
+\item Cross-platform application with maximum code-share - only minor adjustments of view styles to match the native platforms
+\end{itemize}
+
+The back-end application is a \glsi{node} application deployed to \glsi{heroku}.
+It is capable of handling several features.
+
+\begin{itemize}
+\item \Gls{api} protection - with authentication tokens
+\item Web \glspl{api} - for collecting user and measurement data, creating users and changing passwords
+\item Web \gls{api} - compliant with the \glsi{graphql} specification
+\item Email notifications - with auto-generated passwords for new users, created by consultants and coaches
+\item Measurement analysis algorithms - to process racket sensor data
+\item Database communication - with the \glsi{documentdb} \glsi{mongodb}
+\end{itemize}
+
+In terms of the development setup, it consists of a staging environment for development, testing and production, handling database connections and seeding.
+There is a \glsi{ci} server running on all repositories with automated build, tests and code coverage calculations.
+Unit tests are running on both applications and integration tests are testing the web \glspl{api} on the back-end.

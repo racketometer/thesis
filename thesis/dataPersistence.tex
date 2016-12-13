@@ -2,7 +2,7 @@
 This section describes how data persistence is obtained and also give insight into the database schema shown on figure \ref{fig:dbSchema}.
 
 To persist data this project uses \glsi{mongodb} which is a \gls{documentdb}.
-When working with \glspl{documentdb} you often get a more flat and embedded data model than when working with relational databases. 
+When working with \glspli{documentdb} you often get a more flat and embedded data model than when working with relational databases. 
 This is also reflected in our database schema on figure \ref{fig:dbSchema} which only has two entities which will translate into two collections in the \glsi{mongodb}.
 
 The back-end application communicates with a \glsi{mongodb} instance hosted with \glsi{mlab} when running in production.
