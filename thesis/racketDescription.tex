@@ -1,60 +1,9 @@
-\chapter{Racket description}
-This chapter will describe the available features of the racket and explain some basic terms that are relevant for the descriptions.
-The chapter is mainly a short introduction to the terms based on the document in appendix \ref{app:ch:racketSensors}.
+\section{Racket description}
+This section will describe the available features of the racket and explain some basic terms that are relevant for the descriptions.
+It is a short introduction to the terms based on the document in appendix \ref{app:ch:racketSensors}.
+See the documentation for a complete description, chapter \ref{doc:ch:racketDescription}.
 
-\section{Terms}
-There are four terms generally used to describe badminton rackets.
-
-\subsection*{Point of balance}
-Generally this is a measurement in millimetres from the bottom of the handle and up the shaft.
-Rackets are grouped into three categories according to this length.
-There is no official definition of the limits of these, but the general understanding is as shown in table \ref{tab:racket:pointOfBalance}.
-
-\begin{table}
-	\begin{center}
-		\begin{tabularx}{0.7\textwidth}{C|C}
-			\textbf{Category} & \textbf{Length [mm]} \\
-			\hline
-			Head light        & < 285                \\
-			Balanced          & 285-295              \\
-			Head heavy        & >295                 \\
-		\end{tabularx}
-	\end{center}
-    \caption{Categorization of a racket's point of balance}
-    \label{tab:racket:pointOfBalance}
-\end{table}
-
-\subsection*{Weight}
-The weight of the racket is normally in the range of 75-90 grams without strings and grip and 80-100 grams including strings and grip.
-Generally the Yonex \textit{U-system} is used to group rackets as seen in table \ref{tab:racket:weight}
-
-\begin{table}
-	\begin{center}
-		\begin{tabularx}{0.7\textwidth}{C|C|L}
-			\textbf{Category} & \textbf{Weight [grams]} & \textbf{Description} \\
-			\hline
-			U1                & 95-100                  & Very heavy           \\
-			U2                & 90-94                   & Heavy                \\
-			U3                & 85-89                   & Normal               \\
-			U4                & 80-84                   & Light                \\
-			U5                & 75-79                   & Very light           \\
-		\end{tabularx}
-	\end{center}
-    \caption{Categorization of a racket's weight}
-    \label{tab:racket:weight}
-\end{table}
-
-\subsection*{Moment of inertia}
-This is a measure of the racket's ability to rotate.
-Different rackets require different energy amounts to rotate and typically this is in the range of 85-112 \(kg*cm^2\).
-This is a key measure to calculating the features of the racket.
-
-\subsection*{Flexibility}
-As rackets are constructed of different materials they differ in their ability to bend.
-This is the measure of flexibility.
-According to the player's style more or less flexibility can be preferred.
-
-\section{Sensors}
+\subsection{Sensors}
 The sensors build into the racket are an accelerometer and a gyroscope measuring on all three axes as illustrated on figure \ref{fig:sensorAxes}.
 
 Each sensor has a conversion factor to translate the measured levels into SI units.
@@ -63,11 +12,11 @@ Because of this, it is important to keep track of what sensors recorded the data
 
 \graphic{1}{sensorAxes}{Axes of measurement for the racket sensors}{fig:sensorAxes}
 
-\section{Features}
+\subsection{Features}
 Several features are possible to identify from the collected data.
 Some requires only the data it self and others correlate to existing data, e.g. the user's own data.
 
-\subsection*{Kinematics}
+\subsubsection*{Kinematics}
 This is a feature that analyses the kinematics during a stroke.
 Four measures are available from the sensors.
 
@@ -78,21 +27,21 @@ Four measures are available from the sensors.
     \item Linear speed
 \end{itemize}
 
-Each of these can give a measure independently or be combined as a measure of the athletes technique as described below.
+Each of these can give a measure independently or be combined as a measure of the athlete's technique as described below.
 
 Theoretically all the measures combined can describe the racket's position in space.
 This is however not yet possible, as the racket construction introduce some drift to the data.
 
-\subsection*{Power}
+\subsubsection*{Power}
 The measure of power is really a calculation of the theoretical initial speed of the shuttlecock.
 
-\subsection*{Technique}
+\subsubsection*{Technique}
 The kinematic measures can be used to calculate the stroke details and can describe how ''good'', ''accurate'' or ''hard'' a given stroke was.
 By correlation analysis with existing records of performances these measures can be used to rate strokes against fellow athletes or \textit{a golden standard}.
 
-\subsection*{Choice of racket}
-To help the athlete select the perfect racket, a combination of the above mentioned measures can be used to select the better racket type for the individual.
-Athletes on different levels have different demands of their racket and by analyzing the kinematics and power of a stroke with different rackets, the optimum racket can be found.
+\subsubsection*{Choice of racket}
+To help the athlete select the perfect racket, a combination of the above mentioned measures could be used to select the better racket type for the individual.
+Athletes on different levels have different demands of their racket and by analysing the kinematics and power of a stroke with different rackets, the optimum racket can be found.
 
-\subsection*{In-game time}
-This is a measure of the effective game time of the athlete, i.e. excluding breaks and time outs.
+\subsubsection*{In-game time}
+This is a measure of the effective game time of the athlete, i.e. excluding breaks and time-outs.

@@ -1,4 +1,4 @@
-\chapter{Back-end Analysis}
+\chapter{Back-end Performance Analysis}
 This chapter gives insight into the performance of the back-end application.
 
 \section{Optics}
@@ -24,7 +24,7 @@ With \verb+measurements+, the query takes on average of 147 milliseconds to reso
 Those statistics are on a \verb+user+ with only a few measurements.
 From this we can easily see that when \verb+measurements+ grow we need to change how it is handled, e.g. adding ''pagination''. 
 When analysing closer it is clear that the \verb+data+ field on \verb+measurements+ is where performance is lost.
-When requesting without it the the result becomes 87.7 miliseconds, figure \ref{fig:withMeasurementWithoutData}.
+When requesting without it, the result becomes $87.7$ milliseconds, figure \ref{fig:withMeasurementWithoutData}.
 
 Without the \verb+data+ field on \verb+measurements+ the query was resolved in half the time. 
 This shows the power of \glsi{graphql} and emphasizes the penalty of asking for data you do not need.
