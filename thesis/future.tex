@@ -17,6 +17,10 @@ We also wish to get in-app testing working instead of only having business login
 Integration with the \glsi{bluetooth} sensor needs to be setup so that we can demonstrate \glsi{bluetooth} data transmission on the mobile application.
 Currently we can scan and connect with \glsi{bluetooth} devices.
 
+Passwords are currently stored in clean text. 
+This is a big security concern because if someone managed to get a hold of the database, every password is exposed. 
+This needs to be changed by adding password hashing on the back-end before storing them.
+
 \section{Long term}
 After using \glsi{nativescript} during this project, it has been the source of the most frustrations. 
 Due to this we will consider trying out one of the alternatives that we originally wrote off during the pre-studies. See section \ref{sec:crossplatform}. 
@@ -40,3 +44,9 @@ Some key features that the project as a whole is missing, but was not inside the
 \item Achievements - an achievement system for reaching different milestones during your sessions.
 \item Club management - a club management portal on the web that integrates with the user data.
 \end{itemize}
+
+Security is also on the list of things that need to be improved. 
+We have \gls{tls} communication between the back-end and the front-end. 
+This is the most crucial place to have an encrypted connection. 
+The connection between the back-end and the \glsi{mongodb} is however not encrypted. 
+In the future we want to have \gls{tls} on all of our connections.
