@@ -7,7 +7,7 @@ By analysing expectations and use cases with user surveys and interviews, the re
 The developed software applications aimed to allow players, coaches and consultants to manage and measure badminton performances in an accessible way.
 
 Two applications were created.
-A front-end cross-platform mobile application allowing the user to communicate with the racket and persisting data on the back-end.
+A cross-platform mobile application allows the user to communicate with the racket and persist data on the back-end.
 It further more allows consultants to create new users and more.
 The applications communicate with the sensor devices with \gls{bluetooth:ble} and the back-end with the internet.
 
@@ -19,3 +19,23 @@ It allows for consultants to create new users and players to login with auto-gen
 The development of the racket sensors was delayed and not ready for testing.
 Because of this, a representative peripheral device was used to test \glsi{bluetooth:ble} communications.
 Further more a back-end application have been developed with the afore mentioned functionality and deployed to \glsi{heroku}.
+
+\chapter*{Resumé}
+Dette dokument beskriver udviklingsprocessen af softwareplatformen til en sport-gadget ved navn \textit{Racket O Meter}, der er udviklet af eksterne samarbejdspartnere.
+Enheden er en multi-sensor hardware enhed der monteres på en badmintonketsjer og kan måle bevægelser under en kamp.
+
+\Glsi{scrum} metoden været anvendt til den agile projektudførelse og softwareudvikling.
+Med analyser af brugerundersøgelser og interviews har vi defineret kravende til produktet og prioriteret de funktioner der skulle være tilgængelige.
+
+De udviklede applikationer skal give mulighed for at spillere, trænere og konsulenter kan administrere og analysere spillerresultater og præstationer på en nem måde.
+
+Der er udviklet to applikationer.
+En cross-platform mobilapplikation der giver brugere mulighed for at kommunikere og persistere data fra ketsjeren ved hjælp af \glsi{bluetooth:ble}.
+Den giver også mulighed for brugeroprettelse og andre gængse funktioner.
+
+Serverapplikationen udstiller et web \gls{api} der giver mulighed for data persistering af brugere og målinger, dataanalyse af målinger samt brugerautentifikation.
+
+Resultatet af projektet er en mobilapplikation udgivet på \textit{Android}'s app-store, \textit{Google Play}.
+Det giver konsulenter mulighed for at oprette nye brugere og spillere mulighed for at logge ind med deres auto-genererede adgangskoder.
+Udviklingen af ketsjersensoren blev ikke færdiggjort inden projektets afslutning, men en repræsentativ enhed, der anvender samme kommunikationsprotokol er anvendt til at verificere mobilapplikationens funktionalitet.
+Yderligere er serverapplikationen blevet udgivet på \glsi{heroku}.
