@@ -61,6 +61,16 @@ The viewer type has a \verb+token+ parameter that can be used to query the \verb
 The \verb+Viewer+ can only be retrieved if the user is authenticated, either through the \verb+viewer+ field or the \verb+login+ field, on the root type \verb+query+. The \verb+Viewer+ is shown on figure \ref{fig:viewerType}
 \graphich{0.6}{api/viewerType}{The Query root type with fields}{fig:viewerType}
 
+\section{Users}
+The \verb+users+ function is used to get users created by a specific user id. If no id is provided, the \verb+users+ created by the caller is returned. 
+As shown on figure \ref{fig:users}, it can take a \verb+creatorId+.
+\graphich{0.6}{api/users}{The users function with arguments}{fig:users}
+
+\section{Measurements}
+The \verb+measurements+ function is used to get measurements belonging to a specific user id. If no id is provided, the \verb+measurements+ belonging to the caller is returned. 
+As shown on figure \ref{fig:measurements}, it can take a \verb+userId+.
+\graphich{0.6}{api/measurements}{The measurements function with arguments}{fig:measurements}
+
 \section{Mutation}
 \label{sec:mutation}
 The \verb+Mutation+ root type is also a restricted field where the user needs to be authenticated. 
