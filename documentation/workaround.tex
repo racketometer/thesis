@@ -1,0 +1,15 @@
+\subsection*{Workaround}
+The \verb+nativescript-telerik-ui-pro+ package used for creating charts in the front-end application has a bug when building with \glsi{webpack}
+
+Be sure to place the \verb+nativescript-ui-pro.tgz+ package in the root of the application and run \verb+npm install+ before proceeding.
+Until the bug is fixed by \glsi{nativescript}, navigate to this file: 
+
+\verb+./node_modules/nativescript-telerik-ui-pro/chart/angular/chart-directives.js+
+
+On line 3 change 
+
+\verb+var chartModule = require('./../');+
+
+to
+
+\verb+var chartModule = require('./../chart');+
