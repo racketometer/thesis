@@ -1,12 +1,12 @@
 \chapter{Introduction}
-This chapter gives a brief introduction to the project and how it is expected to be solved.
+This chapter gives a brief introduction to the project and how to solve it.
 The main problem to solve is:
 
 \userstory{Enable athletes to monitor, visualize and track their performances, in an accessible way, when exercising}
 
 The overall system aims to enable collaboration between athletes, coaches, administration and other stakeholders in the badminton clubs to gain better achievements and progress for the athletes.
 
-The main part is a ''smart'' racket that can provide the club, coaches and individual players with large amounts of both directly measured and deduced data about their badminton performances.
+The main part is a ''smart'' racket that can provide the club, coaches and individual athletes with large amounts of both directly measured and deduced data about their badminton performances.
 This information can help the coaches find weaknesses and show them where to focus their training for a specific player.
 The second part is a management system where management staff can handle business such as economics, practice attendance and events such as parties and tournaments.
 The system is illustrated in figure \ref{fig:introduction:vision}.
@@ -17,24 +17,24 @@ The vision for this project is to revolutionize club management and progress mon
 The progress monitoring will be made possible with a mobile application that can gather data over \glsi{bluetooth} from sensors in the smart racket and transfer it to the management system.
 The data will be available on both the mobile device and in the web application for the player, coach and club to analyse.
 
-The club can own smart rackets for their players to use on occasions where the coach gathers the data for both the player and club to see.
-The player should also have the option to buy its own smart racket to monitor progress at every single practice or match.
-Data will bind to the player's individual user and will be shareable with the coaches and club.
-The players can further more compare their progress and stats with their friends and other players from the club and share training sessions and progress on social media.
+The club can own smart rackets for their athletes to use on occasions where the coach gathers the data for both the athlete and club to see.
+The athlete should also have the option to buy its own smart racket to monitor progress at every single practice or match.
+Data will bind to the athlete's individual user and will be shareable with the coaches and club.
+The athletes can further more compare their progress and statistics with their friends and other athletes from the club and share training sessions and progress on social media.
 
 \section{Relevance}
 As sports wearables are on the rise with new products launching every month, most large technology companies like \textit{Apple, Inc.} and \textit{Samsung} are investing heavily into the market and \textit{Gartner, Inc.} predicts that ''\textit{From 2015 through 2017, smartwatch adoption will have 48 percent growth(...)}'' \citep{introduction:relevance:gartner}.
 
-New products that enables users to understand their performances and activities are in high demand, but most of the wearables are centered around wristbands and smartphone applications.
+New products that enable users to understand their performances and activities are in high demand, but most of the wearables are centred on wristbands and smartphone applications.
 These have certain limitations and the precision of the data gathered can be of poor quality.
 The product of this project is different.
-It is in the center of the action and gives precise measurements of what forces act on the racket.
+It is in the centre of the action and gives precise measurements of what forces act on the racket.
 With this in mind the product is different in the technological sense but fits the same user demands of existing wearables.
 
 \section{Boundary}
 Since the vision is more than two man can overcome during this project's duration, boundaries are set for the specific parts that we want to achieve, figure \ref{fig:introduction:visionBoundaries}.
 
-As mentioned in the relevance section, the part that makes this system different from a normal club management system, is the progress monitoring through the mobile application and smart racket.
+As mentioned in the relevance section, the part that makes this system different from a normal club management system is the progress monitoring through the mobile application and smart racket.
 Since this is the unique feature, it is also going to be the focus point for the project.
 
 \graphic{0.8}{rich_vision_with_focus.png}{The parts this project will focus on}{fig:introduction:visionBoundaries}
@@ -43,7 +43,7 @@ Since this is the unique feature, it is also going to be the focus point for the
 \label{sec:externalCollaboration}
 As this is a software project we have allied with two external consultants.
 They are responsible for the development of the physical smart racket and the electronics inside.
-Further more they have great knowledge of the badminton community and a great personal network with club managers, coaches and players that can be used for testing, research of user demands and alike.
+Further more they have great knowledge of the badminton community and a great personal network with club managers, coaches and athletes that can be used for testing, research of user demands and alike.
 They will be referred to as the ''consultants'' throughout this report.
 An interview with the consultants were conducted in the initial phase of the project as seen in appendix \ref{app:ch:consultantsInterview}.
 
@@ -51,8 +51,8 @@ An interview with the consultants were conducted in the initial phase of the pro
 The project process is managed with the agile \glsi{scrum} development framework as this is the most popular methodology in software development \citep{introduction:work:scrum}. 
 In the initial weeks of the project, sprints with one and two weeks duration was tested out.
 The latter fit us the most as it covered enough work to make progress and little enough to assess.
-The flow of events in the sprint process are as follows.
-A grooming session is held, at the end of each sprint, to discuss and define new tasks for the project to make sure the \textit{Backlog} is prioritized and up to date.
+The flow of events in the sprint process is as follows.
+A grooming session is held, at the end of each sprint, to discuss and define new tasks for the project, to make sure the \textit{Backlog} is prioritized and up to date.
 
 The \textit{Backlog} is holding all the tasks to be carried out, each of which are estimated with \glspli{scrum:point}, an arbitrary value of how large a given task is.
 This is an estimate and the team is ''learning by doing'' what a single \glsi{scrum:point} means.
@@ -76,24 +76,23 @@ When the review has approved the changes the tasks are placed in the \textit{Don
 \graphic{1}{scrumBoard}{Screenshot of the \textit{Waffle} scrum board}{fig:introduction:scrumBoard}
 
 To make the management of tasks as easy as possible, the used tool synchronizes with \textit{Git} branches, i.e. in-progress work in version control. 
-When a new branch is created in \textit{Git}, referencing a task number, it is moved to \textit{In Progress}. 
+When a new branch is created in \textit{Git}, referencing a task number, the task it is moved to \textit{In Progress}. 
 When a \textit{Pull Request}, i.e. changes ready to be merged into the \textit{master} branch, is opened, the task is moved to \textit{Review} and finally if the \textit{Pull Request} is merged and closed, the task is put in \textit{Done}.
 
 The flow and use of this board has been nothing but fantastic.
 We have had great overview of the tasks and the development as well as thesis and documentation writing have been handled with ease.
 
 \section{Roadmap}
-In planning what we can achieve during this project, a roadmap was created with milestones and dates. 
+In planning what we can achieve during this project, a roadmap was created with overall milestones. 
 The roadmap focuses on the progress of the application during the project. 
 See the roadmap on figure \ref{fig:introduction:roadmap}.
 
 When the roadmap was initially created, the ideas for how the application should look like was not set in stone.
-Many of the milestones represent views in the application.
-But there turned out to be many views that we did not see when then roadmap was initially created.
-This resulted in a slide where most of the milestones in  November and December did not make it into the prototype.
-But instead other views did.
+Many of the milestones represent views in the application, but there turned out to be many views that we did not see when then roadmap was initially created.
+This resulted in a slide where most of the milestones in November and December did not make it into the prototype, but instead other views did.
 
-The roadmap was used during \gls{scrum} planning but became less of a factor the further the project got along. A refactored roadmap half-way through the project, when we had a better idea of what was needed, could have been useful.
+The roadmap was used during \gls{scrum} planning but became less of a factor the further the project got along. 
+A refactored roadmap halfway through the project, when we had a better idea of what was needed, could have been useful.
 
 \graphic{1}{Timeline_v1_2.png}{Roadmap}{fig:introduction:roadmap}
 

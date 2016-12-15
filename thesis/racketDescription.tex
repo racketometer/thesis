@@ -1,20 +1,20 @@
 \section{Racket description}
-This section will describe the available features of the racket and explain some basic terms that are relevant for the descriptions.
+This section will describe the available features of the racket and explain some basic terms that are relevant for the thesis.
 It is a short introduction to the terms based on the document in appendix \ref{app:ch:racketSensors}.
-See the documentation for a complete description, chapter \ref{doc:ch:racketDescription}.
+See the documentation for a more complete description, chapter \ref{doc:ch:racketDescription}.
 
 \subsection{Sensors}
 The sensors build into the racket are an accelerometer and a gyroscope measuring on all three axes as illustrated on figure \ref{fig:sensorAxes}.
 
 Each sensor has a conversion factor to translate the measured levels into SI units.
-The factors from the sensor producers are, per the consultants, not accurate to the measurements made with the racket.
+The factors from the sensor manufactures are, per the consultants, not accurate to the measurements made with the racket.
 Because of this, it is important to keep track of what sensors recorded the data to be able to recalculate features when new versions of the racket might ship.
 
 \graphic{1}{sensorAxes}{Axes of measurement for the racket sensors}{fig:sensorAxes}
 
 \subsection{Features}
 Several features are possible to identify from the collected data.
-Some requires only the data it self and others correlate to existing data, e.g. the user's own data.
+Some requires only the data it self and others correlate to existing data, e.g. the users own data.
 
 \subsubsection*{Kinematics}
 This is a feature that analyses the kinematics during a stroke.
@@ -33,15 +33,15 @@ Theoretically all the measures combined can describe the racket's position in sp
 This is however not yet possible, as the racket construction introduce some drift to the data.
 
 \subsubsection*{Power}
-The measure of power is really a calculation of the theoretical initial speed of the shuttlecock.
+The measure of power is a calculation of the theoretical initial speed of the shuttlecock.
 
 \subsubsection*{Technique}
 The kinematic measures can be used to calculate the stroke details and can describe how ''good'', ''accurate'' or ''hard'' a given stroke was.
-By correlation analysis with existing records of performances these measures can be used to rate strokes against fellow athletes or \textit{a golden standard}.
+By correlation analysis with existing records of performances, these measures can be used to rate strokes against fellow athletes or \textit{a golden standard}.
 
 \subsubsection*{Choice of racket}
 To help the athlete select the perfect racket, a combination of the above mentioned measures could be used to select the better racket type for the individual.
-Athletes on different levels have different demands of their racket and by analysing the kinematics and power of a stroke with different rackets, the optimum racket can be found.
+Athletes on different levels have different demands of their rackets and by analysing the kinematics and power of a stroke with different rackets, the optimum racket can be found.
 
 \subsubsection*{In-game time}
 This is a measure of the effective game time of the athlete, i.e. excluding breaks and time-outs.

@@ -4,11 +4,11 @@ The functional requirements are described with \glspli{userstory} with some addi
 
 \section*{User stories}
 
-\userstory{As a consultant / user, I want to use a phone or tablet to access the system}
+\userstory{As a user, I want to use a phone or tablet to access the system}
 
 This \glsi{userstory} is specified in the consultant interview appendix \ref{app:ch:consultantsInterview:tools}.
 
-Device operating systems to support includes: \newline
+Device operating systems to support include: \newline
 \begin{tabularx}{\textwidth}{X}
     \textit{Apple iOS} 9 and 10 \\
     \textit{Android} 4.3, 4.4, 5.0, 5.1, 6.0 and 7.0
@@ -16,23 +16,23 @@ Device operating systems to support includes: \newline
 
 This covers 92.4\% and 92\% of \textit{Android} and \textit{iOS} devices respectively, according to the distribution tables in appendices \ref{app:ch:androidDistribution} and \ref{app:ch:appleDistribution}.
 
-\userstory{As a consultant, I want to input user information when beginning a session and automatically add them to the user database}
+\userstory{As a consultant / coach, I want to input user information when beginning a session and automatically add them to the user database}
 
 This \glsi{userstory} is specified in the consultant interview appendix \ref{app:ch:consultantsInterview:flow}.
 
-If internet is present, the user information must be submitted immediately to the database.
+If Internet is present, the user information must be submitted immediately to the database.
 
-If internet is not present, the user information must be stored on the device for later automatic submission.
+If Internet is not present, the user information must be stored on the device for later automatic submission.
 
 Information to input must include the following fields:\newline
 \field[The full name of the user]{name}{string}
 \field{email}{string}
 \field{birthday}{Date}
-\field[Years of experience]{experience}{int}
-\field[Type of racket from predefined list]{racketType}{RacketType}
+\field[Years of experience]{experience}{integer}
 \field[Allow comparison to other users]{isComparisonAllowed}{boolean}
+\field[User type]{isCoach}{boolean}
 
-\userstory{As a consultant, I want to start a session with a user and record data from the racket}
+\userstory{As a consultant, I want to start a session with an athlete and record data from the racket}
 
 This \glsi{userstory} is specified in the consultant interview appendix \ref{app:ch:consultantsInterview:flow}.
 
@@ -47,45 +47,45 @@ Information saved for a session must include: \newline
 
 \userstory{As a consultant, I want started sessions to be persisted between application restarts}
 
-This is an expected behaviour and are therefore added as a requirement.
+This is an expected behaviour and is therefore added as a requirement.
 
-\userstory{As a consultant, I want to find a previously stored user}
+\userstory{As a consultant / coach, I want to find a previously stored user}
 
 This \glsi{userstory} is specified in the consultant interview appendix \ref{app:ch:consultantsInterview:flow}.
 
-If internet is present, the list of stored users are updated to reflect the users stored.
+If Internet is present, the list of stored users is updated to reflect the users stored.
 
-If no internet is present, the cached list of users are listed.
+If no Internet is present, the cached list of users is listed.
 
 \userstory{As a consultant, I want to show details of recorded data to specific users}
 
 This \glsi{userstory} is specified in the consultant interview appendix \ref{app:ch:consultantsInterview:flow} and \ref{app:ch:consultantsInterview:features}.
 
 Measured data to be presented as numbers or graphs: \newline
-\field[Number of strokes]{strokes}{int}
+\field[Number of strokes]{strokes}{integer}
 \field[Most used types of strokes from predefined types]{types}{Array<StrokeType>}
 \field[Maximum racket speed in m/s]{maxRacketSpeed}{double}
 \field[Maximum shuttlecock speed in m/s]{maxShuttleCockSpeed}{double}
 
-\userstory{As a user, I want to receive an email with a generated password for my account, when a consultant have created an account on my behalf}
+\userstory{As a user, I want to receive an email with an auto-generated password for my account, when a consultant / coach have created an account on my behalf}
 
 This \glsi{userstory} is specified in the consultant interview appendix \ref{app:ch:consultantsInterview:features}.
 
-When a consultant creates an account on behalf of a user, the user should be able to access that account with an auto generated password send to his account after creation.
+When a consultant / coach creates an account on behalf of a user, the user should be able to access that account with an auto-generated password send to its account after creation.
 
-If internet is present, the email must be submitted immediately.
+If Internet is present, the email must be submitted immediately.
 
-If internet is not present, the email must be stored on the device for later automatic submission.
+If Internet is not present, the email must be stored in the system for later automatic submission.
 
-\userstory{As a user, I want to be able to change my password from within the application}
+\userstory{As a user, I want to be able to change my auto-generated password from within the application}
 
-If internet is not present, this operation is not possible.
+If Internet is not present, this operation is not possible.
 
-\userstory{As a user, I want to compare my performance data to other users}
+\userstory{As an athlete, I want to compare my performance data to other athletes}
 
 This \glsi{userstory} is specified in the consultant interview appendix \ref{app:ch:userSurvey}.
 
-Users that allows comparison must be able to be matched on ranking lists.
+Athletes that allow comparison must be able to be matched on ranking lists.
 
 Ranking lists must be available on the following metrics: \newline
 \begin{tabularx}{\textwidth}{X}
@@ -101,10 +101,10 @@ This \glsi{userstory} is specified in the consultant interview appendix \ref{app
 
 Social media includes Facebook and Twitter.
 
-The shared information must be a summary of the performance, possibly edited by the user, and a link to the complete user profile on the web page.
+The shared information must be a summary of the performance, optionally edited by the user, and a link to the complete user profile on the web page.
 
-\userstory{As a user, I want to see my recorded data compared to historical data}
+\userstory{As an athlete, I want to see my recorded data compared to historical data}
 
 This \glsi{userstory} is specified in the consultant interview appendix \ref{app:ch:userSurvey}.
 
-If a user has multiple recorded sessions, metrics must be presented in comparison with the previously recorded metrics.
+If an athlete has multiple recorded sessions, metrics must be presented in comparison with the previously recorded metrics.

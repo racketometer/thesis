@@ -1,23 +1,21 @@
 \section{Data persistence}
 This section describes how data persistence is obtained and also give insight into the database schema shown on figure \ref{fig:dbSchema}.
 
-To persist data this project uses \glsi{mongodb} which is a \gls{documentdb}.
-When working with \glspli{documentdb} you often get a more flat and embedded data model than when working with relational databases. 
-This is also reflected in our database schema on figure \ref{fig:dbSchema} which only has two entities which will translate into two collections in the \glsi{mongodb}.
+To persist data the project uses \glsi{mongodb}, which is a \gls{documentdb}.
+When working with \glspli{documentdb} you often get a more flat and embedded data model compared to working with relational databases. 
+This is also reflected in our database schema on figure \ref{fig:dbSchema} that only has two entities which will translate into two collections in the \glsi{mongodb}.
 
 The back-end application communicates with a \glsi{mongodb} instance hosted with \glsi{mlab} when running in production.
 A local instance can be used when running development by use of environment variables, see section \ref{sec:staging} for details.
 
 \subsection{Database schema}
-After analysing the domain and the requirements the following database schema was created to fulfill our needs.
+After analysing the domain and the requirements the following database schema was created to fulfil our needs.
 
-It contains 2 collections, i.e. \textit{Measurement} and \textit{User}. \textit{User}s represent all possible users of the system, both players, consultants and coaches. 
-They are then distinguished with flags on the document (\verb+isConsultant+ and \verb+isCoach+).
+It contains two collections, i.e. \textit{Measurement} and \textit{User}. The latter represent all possible users of the system both athletes, consultants and coaches. 
+They are distinguished with flags on the document, i.e. \verb+isConsultant+ and \verb+isCoach+.
 
-\textit{Users} have a zero-to-many relation to itself because users represent every possible users i.e. friends, consultants and coaches.
+\textit{Users} have a zero-to-many relation to itself to hold relationships between athletes, coaches and consultants.
 
-\textit{Measurement} represents both raw data as well as calculated data.
-
-Measurements have a zero-to-many relationship to users because a user can have 0 measurements, but a measurement will always have at least 1 user and possible more if the measurement was uploaded by a coach or consultant.
+\textit{Measurement} represents both raw data as well as calculated data. It has a zero-to-many relationship to users because a user can have zero measurements, but a measurement will always have at least one user and possibly more if the measurement was uploaded by a coach or consultant.
 
 \graphic{1}{dbSchema}{Database schema with \textit{crow foot} notation}{fig:dbSchema}

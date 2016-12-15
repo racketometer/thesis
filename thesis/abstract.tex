@@ -24,18 +24,18 @@ Further more a back-end application have been developed with the afore mentioned
 Dette dokument beskriver udviklingsprocessen af softwareplatformen til en sport-gadget ved navn \textit{Racket O Meter}, der er udviklet af eksterne samarbejdspartnere.
 Enheden er en multi-sensor hardware enhed der monteres på en badmintonketsjer og kan måle bevægelser under en kamp.
 
-\Glsi{scrum} metoden været anvendt til den agile projektudførelse og softwareudvikling.
+\Glsi{scrum} metoden har været anvendt til den agile projektudførelse og softwareudvikling.
 Med analyser af brugerundersøgelser og interviews har vi defineret kravende til produktet og prioriteret de funktioner der skulle være tilgængelige.
 
 De udviklede applikationer skal give mulighed for at spillere, trænere og konsulenter kan administrere og analysere spillerresultater og præstationer på en nem måde.
 
 Der er udviklet to applikationer.
-En cross-platform mobilapplikation der giver brugere mulighed for at kommunikere og persistere data fra ketsjeren ved hjælp af \glsi{bluetooth:ble}.
+En cross-platform mobilapplikation der giver brugere mulighed for at kommunikere og persistere data fra ketsjeren ved hjælp af \glsi{bluetooth:ble} og internettet.
 Den giver også mulighed for brugeroprettelse og andre gængse funktioner.
 
-Serverapplikationen udstiller et web \gls{api} der giver mulighed for data persistering af brugere og målinger, dataanalyse af målinger samt brugerautentifikation.
+Serverapplikationen udstiller et web \gls{api} der giver mulighed for at persistere data om brugere og målinger, dataanalyse af målinger samt brugerautentifikation.
 
 Resultatet af projektet er en mobilapplikation udgivet på \textit{Android}'s app-store, \textit{Google Play}.
-Det giver konsulenter mulighed for at oprette nye brugere og spillere mulighed for at logge ind med deres auto-genererede adgangskoder.
+Den giver konsulenter mulighed for at oprette nye brugere og spillere mulighed for at logge ind med deres auto-genererede eller personlige adgangskoder.
 Udviklingen af ketsjersensoren blev ikke færdiggjort inden projektets afslutning, men en repræsentativ enhed, der anvender samme kommunikationsprotokol er anvendt til at verificere mobilapplikationens funktionalitet.
 Yderligere er serverapplikationen blevet udgivet på \glsi{heroku}.

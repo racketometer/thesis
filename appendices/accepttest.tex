@@ -2,11 +2,19 @@
 \label{ch:protocol}
 This appendix describes the results and experiences during the completion of the acceptance test.
 
-Present: 
+Present: Bjørn Sørensen and Jesper Christensen
 
-Bjørn Sørensen and Jesper Christensen
+Date: 14/12/2016
 
-\userstory{As a consultant / user, I want to use a phone or tablet to access the system}
+Three user accounts are used in the tests.
+
+\begin{enumerate}
+\item Athlete - Email: johnny@test.dk, password: 1234
+\item Coach - Email: coach@test.dk, password: 1234
+\item Consultant - Email: consultant@test.dk, password: 1234
+\end{enumerate}
+
+\userstory{As a user, I want to use a phone or tablet to access the system}
 
 Device operating systems to support includes: \newline
 \begin{tabularx}{\textwidth}{X}
@@ -20,26 +28,28 @@ To limit the scope of the project, only \textit{Android} version 5.0 is tested o
 	\hline
 	 & Yes & No \\
 	\hline
-	As a consultant / user, I can download the app from \textit{iOS} app store using a phone or tablet with either one of the supporting operation systems &   & \xmark  \\
+	As a user, I can download the app from \textit{iOS}'s app store \textit{AppStore} using a phone or tablet with either one of the supporting operating systems &   & \xmark  \\
 	\hline
-	As a consultant / user, I can download the app from \textit{Android} app store using a phone or tablet with either one of the supporting operation systems & \xmark  &  \\
+	As a user, I can download the app from \textit{Android}'s app store \textit{Google Play} using a phone or tablet with either one of the supporting operation systems & \xmark  &  \\
 	\hline
-	As a consultant / user I can log in and access the system in the downloaded application on \textit{iOS} &  & \xmark \\
+	As a user, I can log in and access the system in the downloaded application on \textit{iOS} &  & \xmark \\
 		\hline
-	As a consultant / user I can log in and access the system in the downloaded application on \textit{Android} & \xmark  &  \\
+	As a user, I can log in and access the system in the downloaded application on \textit{Android} & \xmark  &  \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
 	
 \vspace{3mm}
 \textbf{Comments:}
-The application was available on the android app store. It was downloaded and login was succesful using both the user and the coach test user, on a LenovoPad TB3 running Android version 5.0.1.
+The application was available on the \textit{Android} app store. 
+It was downloaded and login was successful using both the all three user types, on a LenovoPad TB3 running \textit{Android} version 5.0.1.
+
 \vspace{3mm}
 
-\userstory{As a consultant, I want to input user information when beginning a session and automatically add them to the user database}
+\userstory{As a consultant / coach, I want to input user information when beginning a session and automatically add them to the user database}
 
-If internet is present, the user information must be submitted immediately to the database.
+If Internet is present, the user information must be submitted immediately to the database.
 
-If internet is not present, the user information must be stored on the device for later automatic submission.
+If Internet is not present, the user information must be stored on the device for later automatic submission.
 
 \begin{tabularx}{\textwidth}{|b|c|c|}
 	\hline
@@ -47,31 +57,34 @@ If internet is not present, the user information must be stored on the device fo
 	\hline
 	As a consultant, I can input user information on their behalf & \xmark  &  \\
 	\hline
-	If internet is present, the user will be added to the database immediately &  & \xmark \\
+	As a coach, I can input user information on their behalf & \xmark  &  \\
 	\hline
-	If internet is unavailable, the user will be stored on the device and added to the database when internet connection is restored &  & \xmark  \\
+	If Internet is present, the user will be added to the database immediately & \xmark & \\
 	\hline
-	\end{tabularx}
+	If Internet is unavailable, the user will be stored on the device and added to the database when internet connection is restored &  & \xmark  \\
+	\hline
+\end{tabularx}
 	
 \vspace{3mm}
 \textbf{Comments:}
-When logged in as the test coach. user information could be input on their behalf.
-The application crashed when trying to submit the user.
+When logged in as the coach, user information, excluding the \verb+isCoach+ flag, could be input on their behalf.
+When logged in as the consultant, user information could be input on their behalf.
+When submitting the form, the user can be found in the Users tab.
 \vspace{3mm}
 
-\userstory{As a consultant, I want to start a session with a user and record data from the racket}
+\userstory{As a consultant, I want to start a session with an athlete and record data from the racket}
 
 \begin{tabularx}{\textwidth}{|b|c|c|}
-	\hline
+	\hline    
 	 & Yes & No \\
 	\hline
 	As a consultant, I can start a session with a user and record data from the racket &   & \xmark  \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
 	
 \vspace{3mm}
 \textbf{Comments:}
-Since no racket sensor have been delivered, this test could not be performed
+As no racket sensor was available, this test could not be performed.
 \vspace{3mm}
 
 \userstory{As a consultant, I want started sessions to be persisted between application restarts}
@@ -82,26 +95,27 @@ Since no racket sensor have been delivered, this test could not be performed
 	\hline
 	As a consultant, I can restart the application and still have the same started sessions as before the restart &   & \xmark  \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
 
 \vspace{3mm}
 \textbf{Comments:}
-Since no racket sensor have been delivered, this test could not be performed. The logic is present however.
+As no racket sensor was available, this test could not be performed. 
+The functionality is present in code however.
 \vspace{3mm}
 
-\userstory{As a consultant, I can find a previously stored user}
+\userstory{As a consultant / coach, I can find a previously stored user}
 
 \begin{tabularx}{\textwidth}{|b|c|c|}
 	\hline
 	 & Yes & No \\
 	\hline
-	As a consultant, I can search for and find a previously stored user &   & \xmark  \\
+	As a consultant / coach, I can find a previously stored user & \xmark  &  \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
 
 \vspace{3mm}
 \textbf{Comments:}
-This feature is did not make it into the prototype.
+In the Users tab all users created by the consultant can be found.
 \vspace{3mm}
 
 \userstory{As a consultant, I want to show details of recorded data to specific users}
@@ -112,29 +126,32 @@ This feature is did not make it into the prototype.
 	\hline
 	As a consultant, I can show details of recorded data &   & \xmark  \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
 
 \vspace{3mm}
 \textbf{Comments:}
-Since no racket sensor have been delivered, this test could not be performed. The logic is present however.
+As no racket sensor was available, this test could not be performed. 
+The functionality is present in code however.
 \vspace{3mm}
 
-\userstory{As a user, I want to receive an email with a generated password for my account, when a consultant have created an account on my behalf}
+\userstory{As a user, I want to receive an email with a generated password for my account, when a consultant / coach have created an account on my behalf}
 
 \begin{tabularx}{\textwidth}{|b|c|c|}
 	\hline
 	 & Yes & No \\
 	\hline
-	As a user I receive an email with a generated password to my account, when a consultant have created one on my behalf &  & \xmark  \\
+	As a user, I receive an email with a generated password to my account, when a consultant have created one on my behalf & \xmark & \\
 	\hline
-	\end{tabularx}
+	As a user, I receive an email with a generated password to my account, when a coach have created one on my behalf & \xmark & \\
+	\hline
+\end{tabularx}
 
 \vspace{3mm}
 \textbf{Comments:}
-This functionality worked when deployed from debug mode. However the application from the Google Play Store crashes when attemtping to create a new user as a coach.
+An email was received with a password.
 \vspace{3mm}
 
-\userstory{As a user, I want to be able to change my password from within the application}
+\userstory{As a user, I want to be able to change my auto-genereated password from within the application}
 
 If internet is not present, this operation is not possible.
 
@@ -142,29 +159,28 @@ If internet is not present, this operation is not possible.
 	\hline
 	 & Yes & No \\
 	\hline
-	As a user, I can change my password from within the application, if i have internet access &   & \xmark  \\
+	As a user, I can change my auto-generated password from within the application, if I have internet access & \xmark & \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
 
 \vspace{3mm}
 \textbf{Comments:}
-This feature did not make it into the prototype.
-Autogenerated users will be forced to change their autogenerated passwords on their first login attempt. Could not be tested since the application crashes in the ''new user'' view.
+When logging on with a new user, they are forced to change their auto-generated password.
 \vspace{3mm}
 
-\userstory{As a user, I want to compare my performance data to other users}
+\userstory{As an athlete, I want to compare my performance data to other athletes}
 
 \begin{tabularx}{\textwidth}{|b|c|c|}
 	\hline
 	 & Yes & No \\
 	\hline
-	As a user I can compare my performance data with other user &   & \xmark  \\
+	As an athlete, I can compare my performance data with other athletes &   & \xmark  \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
 
 \vspace{3mm}
 \textbf{Comments:}
-This feature is did not make it into the prototype.
+This feature did not make it into the prototype.
 \vspace{3mm}
 
 \userstory{As a user, I want to share my user profile on social media}
@@ -173,28 +189,28 @@ This feature is did not make it into the prototype.
 	\hline
 	 & Yes & No \\
 	\hline
-	As a user I can share my user profile on Facebook &   & \xmark  \\
+	As a user, I can share my user profile on Facebook &   & \xmark  \\
 	\hline
-	As a user I can share my user profile on Twitter &   & \xmark  \\
+	As a user, I can share my user profile on Twitter &   & \xmark  \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
 
 \vspace{3mm}
 \textbf{Comments:}
-This feature is did not make it into the prototype.
+This feature did not make it into the prototype.
 \vspace{3mm}
 
-\userstory{As a user, I want to see my recorded data compared to historical data}
+\userstory{As an athlete, I want to see my recorded data compared to historical data}
 
 \begin{tabularx}{\textwidth}{|b|c|c|}
 	\hline
 	 & Yes & No \\
 	\hline
-	As a user, I can see my recorded data compared to historical data if i have multiple recording sessions &   & \xmark  \\
+	As an athlete, I can see my recorded data compared to historical data if I have multiple recording sessions &   & \xmark  \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
 
 \vspace{3mm}
 \textbf{Comments:}
-This feature is did not make it into the prototype.
+This feature did not make it into the prototype.
 \vspace{3mm}

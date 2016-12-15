@@ -4,7 +4,7 @@ This chapter will describe the short and long term plans for future development 
 \section{Short-term}
 This section will describe the short-term plans for what we want to achieve over the coming month.
 
-On the back-end better encapsulation of code should be practiced.
+On the back-end, better encapsulation of code should be practiced.
 Dependency injection should be set up and all ''loose code'' needs to be wrapped up in a function or class.
 
 More tests needs to be written and code coverage needs to be increased.
@@ -14,18 +14,18 @@ Integration tests are currently run together with unit tests.
 These should be separate because integration tests spin up a lot of code that gives a false sense of what is tested, when looking at the coverage report.
 We also wish to get in-app testing working instead of only having business login unit tests on the front-end application.
 
-Integration with the \glsi{bluetooth} sensor needs to be set up so that we can demonstrate \glsi{bluetooth} data transmission on the mobile application.
+Integration with the \glsi{bluetooth} sensor needs to be set up so we can demonstrate \glsi{bluetooth} data transmission on the mobile application.
 Currently we can scan and connect with \glsi{bluetooth} devices.
 
 Passwords are currently stored in clean text. 
-This is a big security concern because if someone managed to get a hold of the database, every password is exposed. 
+This is a big security concern because if someone managed to compromise the database, every password is exposed. 
 This needs to be changed by adding password hashing on the back-end before storing them.
 
 \section{Long-term}
 After using \glsi{nativescript} during this project, it has been the source of the most frustrations.
 Due to this we will consider trying out one of the alternatives that we originally wrote off during the pre-studies, see section \ref{sec:crossplatform}. 
 
-\glsi{reactnative} is the alternative we are considering to at least try out to see if it is a product that can deliver a better developer experience as well as leverage the requirements the mobile application have.
+\Glsi{reactnative} is the alternative we are considering to at least try out to see if it is a product that can deliver a better developer experience as well as leverage the requirements the mobile application have.
 
 UI redesign is also high on the list of improvements we want to make.
 Getting an external UI/UX designer to work on how the application should look could be a major improvement on the product.
@@ -33,15 +33,17 @@ Getting an external UI/UX designer to work on how the application should look co
 There are some key features that did not make it for the deadline of the project.
 \begin{itemize}  
 \item Profile view - a view where users can change their user and profile settings.
-\item Ranking - a system where you can rank yourself against people in the same club and / or friends.
-\item History - a view where you can browse all your previous sessions.
-\item Share - users should be able to share session on social media.
+\item Ranking - a system where users can rank them self against users in the same club and / or friends.
+\item History - a view where users can browse all their previous sessions.
+\item Sharing - users should be able to share session on social media.
+\item Offline support – cache management to support offline activities.
+\item Replace Telerik UI Pro dependency – find an \gls{oss} package to replace the used parts of the Telerik package.
 \end{itemize}
 
-Some key features that the project as a whole is missing, but was not inside the initial scope of the project is listed below.
+Some key features that were not inside the initial scope of the project is listed below.
 \begin{itemize}  
 \item Website - a web portal to compliment the mobile application.
-\item Achievements - an achievement system for reaching different milestones during your sessions.
+\item Achievements - an achievement system for reaching different milestones during the user’s sessions.
 \item Club management - a club management portal on the web that integrates with the user data.
 \end{itemize}
 
@@ -50,3 +52,4 @@ We have \gls{tls} communication between the back-end and the front-end.
 This is the most crucial place to have an encrypted connection. 
 The connection between the back-end and the \glsi{mongodb} is however not encrypted. 
 In the future we want to have \gls{tls} on all of our connections.
+The web \gls{api} is not protected against excessive usage as well, why request throttling and circular dependency resolvement should be of concern in the further \gls{api} development. 

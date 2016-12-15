@@ -1,11 +1,19 @@
 \chapter{Environment variables}
 \label{ch:environmentVariables}
 The project utilizes several environment variables to manage staging to different environments.
-These are listed in table \ref{tbl:env:backend} and \ref{tbl:env:frontend}.
+These are listed in the tables below.
 
-\begin{table}
-\caption{Back-end environment variables}
-\label{tbl:env:backend}
+\subsection*{Front-end}
+\begin{tabularx}{\textwidth}{|l|L|}
+\hline
+\textbf{Environment variable} & \textbf{Value} \\ 
+\hline 
+
+\verb+ROM_BACKEND_IP+ & URL to back-end application \\
+\hline
+\end{tabularx}
+
+\subsection*{Back-end}
 \begin{tabularx}{\textwidth}{|l|l|L|}
 \hline
 \textbf{Environment variable} & \textbf{Value} & \textbf{Description} \\
@@ -13,23 +21,9 @@ These are listed in table \ref{tbl:env:backend} and \ref{tbl:env:frontend}.
 
 \verb+ROM_DB_TEST+ & \gls{url} to test database & Used locally and on \glsi{travis} \\ 
 \verb+ROM_DB_PROD+ & URL to production database. & Used on production server and in some cases locally \\ 
-\verb+NODE_ENV+ & \verb+test+ or \verb+prod+ & Depending on what environment you want to run in. Automatically set to \verb+test+ when running \verb+npm run test+ \\ 
+\verb+NODE_ENV+ & \verb+test+ or \verb+prod+ & Depending on what environment you want to run in. Automatically set to \verb+test+ when running \verb+npm test+ \\ 
 \verb+COVERALLS_REPO_TOKEN+ & Coveralls token & Used locally and on \glsi{travis} \\ 
 \verb+NPM_CONFIG_PRODUCTION+ & \verb+false+ & Used on \glsi{heroku}, see section \ref{sec:deployment:new} \\ 
 \verb+PORT+ & \verb+8080+ & Server server port \\ 
 \hline
-\end{tabularx} 
-\end{table}
-
-\begin{table}
-\caption{Front-end environment variables}
-\label{tbl:env:frontend}
-\begin{tabularx}{\textwidth}{|l|L|}
-\hline
-\textbf{Environment variable} & \textbf{Value} \\ 
-\hline 
-
-\verb+ROM_BACKEND_IP+ & \gls{url} to back-end application \\
-\hline
 \end{tabularx}
-\end{table}

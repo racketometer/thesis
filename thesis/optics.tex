@@ -4,38 +4,37 @@ This chapter gives insight into the performance of the back-end application.
 \section{Optics}
 \Glsi{apollo:optics} is an analysis tool build by the \glsi{meteor} developer team for use on \glsi{graphql} servers. 
 They currently support \glsi{express}, \glsi{hapi}, \glsi{koa} and \glsi{ruby} servers. 
-It is a commercial product but also contains a free plan for developers.
+It is a commercial product but allows for a limited free plan.
 
 \Glsi{apollo:optics} was added to the project to get insights into the performance of the different queries the user can perform. 
 The data can then be used to pinpoint performance bottlenecks and where you need to optimize your application.
 
 \subsection{Performance analysis}
-Figure \ref{fig:withoutMeasurement} is a screenshot of the results from \Glsi{apollo:optics} that shows the analysis for querying after the \verb+viewer+, including the \verb+user+ but excluding the user's \verb+measurements+. 
-It shows that the average duration of the request takes 8.19 milliseconds to resolve. 
+Figure \ref{fig:withoutMeasurement} is a screenshot of the results from \glsi{apollo:optics} that shows the analysis for querying after the \verb+viewer+, including the \verb+user+ but excluding the user's \verb+measurements+. 
+It shows that the average duration of the request takes $8.19$ milliseconds to resolve. 
 
 \graphich{0.72}{withoutMeasurement}{\Glsi{apollo:optics} analysis for viewer, including the
 user but excluding measurements}{fig:withoutMeasurement}
 
-That is pretty fast, but when asking for the \verb+user+'s \verb+measurements+ the request duration increases by a factor of 20 to 170 milliseconds, as illustrated on figure \ref{fig:withMeasurement}.
+That is fast, but when asking for the \verb+user+'s \verb+measurements+ the request duration increases by a factor of $20$ to $170$ milliseconds, as illustrated on figure \ref{fig:withMeasurement}.
 
 \graphich{0.72}{withMeasurement_short}{\Glsi{apollo:optics} analysis for viewer, including the user and measurements}{fig:withMeasurement}
 
-With \verb+measurements+, the query takes on average of 147 milliseconds to resolve.
+With \verb+measurements+, the query takes on average of $147$ milliseconds to resolve.
 Those statistics are on a \verb+user+ with only a few measurements.
-From this we can easily see that when \verb+measurements+ grow we need to change how it is handled, e.g. adding ''pagination''. 
+From this we can see that when \verb+measurements+ grow, we need to change how it is handled, e.g. adding ''pagination''. 
 When analysing closer it is clear that the \verb+data+ field on \verb+measurements+ is where performance is lost.
 When requesting without it, the result becomes $87.7$ milliseconds, figure \ref{fig:withMeasurementWithoutData}.
 
 Without the \verb+data+ field on \verb+measurements+ the query was resolved in half the time. 
 This shows the power of \glsi{graphql} and emphasizes the penalty of asking for data you do not need.
 
-\graphich{0.72}{withMeasurementWithoutData_short}{\glsi{apollo:optics} analysis for viewer,
-including the user and measurements but excluding data}{fig:withMeasurementWithoutData}
+\graphich{0.72}{withMeasurementWithoutData_short}{\Glsi{apollo:optics} analysis for viewer, including the user and measurements but excluding data}{fig:withMeasurementWithoutData}
 
 \subsection{Comparison}
 When comparing a few queries side by side it becomes very clear that the amount of data that is queried have a big impact on performance. 
-Why \verb+login+ is slower than querying after a \verb+user+ can be tracked down to how the database is set up, i.e. users are only indexed by id and not e-mail.
+Why \verb+login+ is slower than querying after a \verb+user+ can be tracked down to how the database is set up, i.e. users are only indexed by id and not email.
 When \verb+login+ tries to find a user matching a specific email and password, it takes a lot longer than when looking for a user with a specific id. 
 By adding indexes to the email, we could see a performance increase. 
 
-\graphich{0.6}{overview_optics}{Comparison of 4 different queries analysed with \glsi{apollo:optics}}{fig:overview_optics}
+\graphich{0.6}{overview_optics}{Comparison of four different queries analysed with \glsi{apollo:optics}}{fig:overview_optics}

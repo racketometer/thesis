@@ -1,9 +1,9 @@
 \chapter{Architecture}
-This chapter describes the architecture used in the project.
+This chapter describes the different architectures used in the project.
 
 \section{Domain model}
-Given the above introduction a domain model was derived, figure \ref{fig:domainModel}, to make the domain entity relations visible.
-This is done to make sure the understanding of the relations are clear before doing any further development.
+A domain model was derived, figure \ref{fig:domainModel}, to make the domain entity relations visible after the introduction to the domain by the consultans.
+This was done to make sure the understanding of the relations are clear before doing any further development.
 It is important to note that this is a tentative model and as long as the project is under development, it is subject to change.
 
 \graphic{1}{domain_model}{Domain model}{fig:domainModel}
@@ -21,9 +21,9 @@ The client application layer is run with the \glsi{nativescript} run-time.
 At compile time, the \glsi{ng2} views and styling is rendered to native \gls{ui} elements and styling.
 The application logic is held in JavaScript and run on a platform specific JavaScript engine, i.e. \glsi{v8} for \textit{Android} and \gls{javascriptcore} for \textit{iOS}.
 
-On the back-end the application layer is an \glsi{apollo:server} instance.
-This is the counter part to the \glsi{apollo:client} and provides the reactive data system.
-It further defines the \gls{api} for collecting data from databases like \glsi{mongodb}, as this project utilizes.
+On the back-end the application layer is \glsi{apollo:server}.
+This is the counter part to the \glsi{apollo:client} and these in conjunction provides the reactive data system.
+It communicates with \glsi{mongoose} that handles connection to the database.
 Both of these frameworks run on the \glsi{node} run-time, which in turn runs on the \glsi{v8} JavaScript engine.
 
 \graphic{0.9}{frameworkArchitecture}{Framework architecture overview}{fig:frameworkArchitecture}
@@ -33,11 +33,11 @@ The front-end application is written in \glsi{ng2}.
 The framework utilizes a component structured \gls{mvc} architecture where each component represents the VC part and services cover M \citep{architecture:ng}, as shown on figure \ref{fig:mvcComponent}.
 
 A component is split into two parts.
-The \verb+template+, specifically in \glsi{nativescript}, is written in a language similar to \gls{xml} and represents how a component should be rendered in the \gls{ui}.
-It communicates with a \verb+controller+, the component class, with events and get information with property bindings.
+The \verb+template+ is, in \glsi{nativescript}, written in a language similar to \gls{xml} and represents how a component should be rendered in the \gls{ui}.
+It communicates with a \verb+controller+, the component class, with events and gets information with property bindings.
 It can communicate with services that are constructor injected by the Angular Dependency Injection system.
 
-A \verb+service+ is responsible for the business logic and can communicate with a back-end or perform calculations etc.
+A \verb+service+ is responsible for the business logic and can communicate with a back-end or perform calculations and logic.
 It is possible to do this in the controllers as well, but it makes them harder to unit test and further more ads logic that is not view specific.
 
 \graphic{1}{mvcComponent}{\Gls{mvc} component with \glsi{ng2} terminology}{fig:mvcComponent}

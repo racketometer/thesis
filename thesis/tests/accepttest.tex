@@ -1,11 +1,11 @@
 \chapter{Acceptance tests}
 This chapter will contain user stories from chapter \ref{ch:Requirements} followed by acceptance tests to test weather the requirements are fulfilled or not.
 
-The acceptance test protocol describing what was found at every user story, can be found in appendix \ref{app:ch:protocol}
+The acceptance test protocol describing what was found at every user story, can be found in appendix \ref{app:ch:protocol}.
 
 \userstory{As a consultant / user, I want to use a phone or tablet to access the system}
 
-Device operating systems to support includes: \newline
+Device operating systems to support include: \newline
 \begin{tabularx}{\textwidth}{X}
     \textit{Apple iOS} 9 and 10 \\
     \textit{Android} 4.3, 4.4, 5.0, 5.1, 6.0 and 7.0
@@ -17,21 +17,21 @@ To limit the scope of the project, only \textit{Android} version 5.0 is tested o
 	\hline
 	 & Yes & No \\
 	\hline
-	As a consultant / user, I can download the app from \textit{iOS} app store using a phone or tablet with either one of the supporting operation systems &   & \xmark  \\
+	As a user, I can download the app from \textit{iOS}'s app store \textit{AppStore} using a phone or tablet with either one of the supporting operating systems &   & \xmark  \\
 	\hline
-	As a consultant / user, I can download the app from \textit{Android} app store using a phone or tablet with either one of the supporting operation systems & \xmark  &  \\
+	As a user, I can download the app from \textit{Android}'s app store \textit{Google Play} using a phone or tablet with either one of the supporting operation systems & \xmark  &  \\
 	\hline
-	As a consultant / user I can log in and access the system in the downloaded application on \textit{iOS} &  & \xmark \\
+	As a user, I can log in and access the system in the downloaded application on \textit{iOS} &  & \xmark \\
 		\hline
-	As a consultant / user I can log in and access the system in the downloaded application on \textit{Android} & \xmark  &  \\
+	As a user, I can log in and access the system in the downloaded application on \textit{Android} & \xmark  &  \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
 
 \userstory{As a consultant, I want to input user information when beginning a session and automatically add them to the user database}
 
-If internet is present, the user information must be submitted immediately to the database.
+If Internet is present, the user information must be submitted immediately to the database.
 
-If internet is not present, the user information must be stored on the device for later automatic submission.
+If Internet is not present, the user information must be stored on the device for later automatic submission.
 
 \begin{tabularx}{\textwidth}{|b|c|c|}
 	\hline
@@ -39,21 +39,23 @@ If internet is not present, the user information must be stored on the device fo
 	\hline
 	As a consultant, I can input user information on their behalf & \xmark  &  \\
 	\hline
-	If internet is present, the user will be added to the database immediately & & \xmark  \\
+	As a coach, I can input user information on their behalf & \xmark  &  \\
 	\hline
-	If internet is unavailable, the user will be stored on the device and added to the database when internet connection is restored &  & \xmark  \\
+	If Internet is present, the user will be added to the database immediately & \xmark & \\
 	\hline
-	\end{tabularx}
+	If Internet is unavailable, the user will be stored on the device and added to the database when internet connection is restored &  & \xmark  \\
+	\hline
+\end{tabularx}
 
 \userstory{As a consultant, I want to start a session with a user and record data from the racket}
 
 \begin{tabularx}{\textwidth}{|b|c|c|}
-	\hline
+	\hline    
 	 & Yes & No \\
 	\hline
 	As a consultant, I can start a session with a user and record data from the racket &   & \xmark  \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
 
 \userstory{As a consultant, I want started sessions to be persisted between application restarts}
 
@@ -63,17 +65,17 @@ If internet is not present, the user information must be stored on the device fo
 	\hline
 	As a consultant, I can restart the application and still have the same started sessions as before the restart &   & \xmark  \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
 
-\userstory{As a consultant, I can find a previously stored user}
+\userstory{As a consultant / coach, I can find a previously stored user}
 
 \begin{tabularx}{\textwidth}{|b|c|c|}
 	\hline
 	 & Yes & No \\
 	\hline
-	As a consultant, I can search for and find a previously stored user &   & \xmark  \\
+	As a consultant / coach, I can find a previously stored user & \xmark  &  \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
 
 \userstory{As a consultant, I want to show details of recorded data to specific users}
 
@@ -83,39 +85,41 @@ If internet is not present, the user information must be stored on the device fo
 	\hline
 	As a consultant, I can show details of recorded data &   & \xmark  \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
 
-\userstory{As a user, I want to receive an email with a generated password for my account, when a consultant have created an account on my behalf}
-
-\begin{tabularx}{\textwidth}{|b|c|c|}
-	\hline
-	 & Yes & No \\
-	\hline
-	As a user I receive an email with a generated password to my account, when a consultant have created one on my behalf & & \xmark  \\
-	\hline
-	\end{tabularx}
-
-\userstory{As a user, I want to be able to change my password from within the application}
-
-If internet is not present, this operation is not possible.
+\userstory{As a user, I want to receive an email with an auto-generated password for my account, when a consultant / coach have created an account on my behalf}
 
 \begin{tabularx}{\textwidth}{|b|c|c|}
 	\hline
 	 & Yes & No \\
 	\hline
-	As a user, I can change my password from within the application, if i have internet access &   & \xmark  \\
+	As a user, I receive an email with a generated password to my account, when a consultant have created one on my behalf & \xmark & \\
 	\hline
-	\end{tabularx}
+	As a user, I receive an email with a generated password to my account, when a coach have created one on my behalf & \xmark & \\
+	\hline
+\end{tabularx}
 
-\userstory{As a user, I want to compare my performance data to other users}
+\userstory{As a user, I want to be able to change my auto-generated password from within the application}
+
+If Internet is not present, this operation is not possible.
 
 \begin{tabularx}{\textwidth}{|b|c|c|}
 	\hline
 	 & Yes & No \\
 	\hline
-	As a user I can compare my performance data with other user &   & \xmark  \\
+	As a user, I can change my auto-generated password from within the application, if I have internet access & \xmark & \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
+
+\userstory{As an athlete, I want to compare my performance data to other athletes}
+
+\begin{tabularx}{\textwidth}{|b|c|c|}
+	\hline
+	 & Yes & No \\
+	\hline
+	As an athlete, I can compare my performance data with other athletes &   & \xmark  \\
+	\hline
+\end{tabularx}
 
 \userstory{As a user, I want to share my user profile on social media}
 
@@ -123,18 +127,18 @@ If internet is not present, this operation is not possible.
 	\hline
 	 & Yes & No \\
 	\hline
-	As a user I can share my user profile on Facebook &   & \xmark  \\
+	As a user, I can share my user profile on Facebook &   & \xmark  \\
 	\hline
-	As a user I can share my user profile on Twitter &   & \xmark  \\
+	As a user, I can share my user profile on Twitter &   & \xmark  \\
 	\hline
-	\end{tabularx}
+\end{tabularx}
 
-\userstory{As a user, I want to see my recorded data compared to historical data}
+\userstory{As an athlete, I want to see my recorded data compared to historical data}
 
 \begin{tabularx}{\textwidth}{|b|c|c|}
 	\hline
 	 & Yes & No \\
 	\hline
-	As a user, I can see my recorded data compared to historical data if i have multiple recording sessions &   & \xmark  \\
+	As an athlete, I can see my recorded data compared to historical data if I have multiple recording sessions &   & \xmark  \\
 	\hline
-	\end{tabularx}
+\end{tabularx}

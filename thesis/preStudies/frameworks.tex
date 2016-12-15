@@ -1,15 +1,15 @@
 \section{Cross-platform frameworks}
 \label{sec:crossplatform}
 
-This section will evaluate different frameworks for cross-platform development which could be used in the project.
+This section will evaluate different frameworks for cross-platform development, which could be used in the project.
 
 It is considered a requirement that the application works on multiple platforms as the initial interview with the consultants, appendix \ref{app:ch:consultantsInterview}, established the needs for this. Further more the existing racket hardware communicates with \gls{bluetooth:ble}.
 When working with new technologies the community is an indicator of the adoption of the technology and is considered important, as to avoid learning short-lived technologies.
 
 The \textit{nice to have} requirements are defined from a developer's point of view.
-If the framework supports both web and mobile applications functionality can be reused and thus reduce development effort and costs.
-Type safety also reduces development costs as less errors are introduced by the developer when the compiler detects mistakes.
-To follow modern standards in mobile, and web, development, data must be reactive, as this is expected by the users.
+If the framework supports both web and mobile applications, functionality can be reused and thus reduce development effort and costs.
+Type safety also reduces development costs as the developer introduces fewer errors when the compiler detects mistakes.
+To follow modern standards in mobile, and web, development, data must be reactive, as the users expect this.
 If the code base compiles to native \glspl{api} as well, performance is increased and thus the user experience is improved.
 
 The \textit{must have} and \textit{nice to have} capabilities are summed up below.
@@ -25,7 +25,7 @@ The \textit{must have} and \textit{nice to have} capabilities are summed up belo
 \begin{itemize}
 	\item One framework both for web and mobile applications.
 	\item Type safety in the programming language.
-	\item Reactive data. Updated data in the database should reflect on the clients.
+	\item Reactive data. Updated data in the database should be reflected on the clients.
 	\item Compiles to native code for increased performance.
 \end{itemize}
 
@@ -36,7 +36,7 @@ The \textit{must have} and \textit{nice to have} capabilities are summed up belo
 \\
 \glsi{meteor} is a framework for developing both web and mobile applications.
 It comes with \glsi{cordova} built-in and is considered super fast for developing applications and prototyping.
-It comes with a lot of built-in tools and a package library for easy setup of things like user  and login integrations of different kinds, e.g. Google and Facebook. It comes with hot code push which is a tool for uploading new versions of your application to the app stores.
+It comes with a lot of built-in tools and a package library for easy setup of things like user and login integrations of different kinds, e.g. Google and Facebook. It comes with \textit{hot code push}, which is a tool for uploading new versions of your application to the app stores.
 
 \glsi{meteor} has its own \gls{cli} which is very useful when developing and it allows one to write the back-end in plain JavaScript.
 Out of the box it integrates with \glsi{mongodb} and it uses \glsi{ddp} for sending data between the client and the server.
@@ -49,13 +49,13 @@ This data is reactive and will be updated at the clients when it changes.
 \\
 \textbf{Description:}
 \\
-\glsi{nativescript} uses a JavaScript toolchain to compile the JavaScript code into the native \gls{api}.
+\glsi{nativescript} uses a JavaScript toolchain to compile JavaScript code into the native \glspl{api}.
 This is a huge advantage because it makes the application work exactly like it was written natively without ever writing any native code or knowing about the native \glspl{api}.
 The markup is written in an \gls{xml} like language and is styled with \gls{css}.
-It is developed by Telerik, a big software company where one can opt-in for support through a paid license.
+Telerik, a big software company where one can opt-in for support through a paid license, develops it.
 
 It is supported by Google and therefore works well with \glsi{ng2} and \gls{typescript} and with this the \textit{nice to have} feature ''type safety'' is fulfilled.
-\gls{bluetooth:ble} capabilities can be achieved with the \glsi{node} package \verb+nativescript-bluetooth+, created by \glsi{npm} user \textit{eddyverbruggen}.
+\Gls{bluetooth:ble} capabilities can be achieved with the \glsi{node} package \verb+nativescript-bluetooth+, created by \glsi{npm} user \textit{eddyverbruggen}.
 \glsi{nativescript} supports \textit{iOS}, \textit{Android}, \textit{Universal Windows Platform} and if \glsi{ng2} is used it also supports building web applications \citep{preStudy:frameworks:nativescript}.
 
 
@@ -67,7 +67,7 @@ It is supported by Google and therefore works well with \glsi{ng2} and \gls{type
 \textit{ReactNative} is a framework by Facebook, Inc.
 It extends the \glsi{react} framework for building native applications.
 \textit{ReactNative} requires the developer to know Objective-C for \textit{iOS} development and Java for \textit{Android} development.
-This does not fulfill the requirement that it has to be cross-platform without the developer needing to know about the distinct platform languages and \glspl{api}.
+This does not fulfil the requirement that it has to be cross-platform without the developer needing to know about the distinct platform languages and \glspl{api}.
 
 
 \subsection*{Xamarin}
@@ -79,12 +79,12 @@ This does not fulfill the requirement that it has to be cross-platform without t
 There are two main ways of developing with \textit{Xamarin}.
 \textit{Xamarin forms} which is the method that has the highest amount of code-sharing between platforms.
 It is estimated around 80-95\% code sharing depending on how specific the \gls{ui} has to be.
-The other is \textit{Xamarin native} which has around 50-60\% code sharing with mainly business login.
+The other is \textit{Xamarin native}, which has around 50-60\% code sharing with mainly business login.
 With this the \gls{ui} implementations differ for each platform.
 When using \textit{Xamarin native} it is a huge advantage to know about the native \gls{ui} \glspl{api}.
 
 \subsection*{Requirements summary}
-This table shows how each framework fulfills the specified requirements.
+This table shows how each framework fulfils the specified requirements.
 
 \begin{tabularx}{\textwidth}{|l|C C C C|}
 	\hline
@@ -107,6 +107,6 @@ This table shows how each framework fulfills the specified requirements.
 \end{tabularx}
 
 \subsection*{Conclusion}
-\glsi{nativescript} fulfills most of our requirements out of the box.
+\Glsi{nativescript} fulfils most of our requirements out of the box.
 The only thing that is not support is reactive data, however this can still be achieved with other tools.
 Therefore the selection falls upon \glsi{nativescript}.

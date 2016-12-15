@@ -1,13 +1,13 @@
 \chapter{Architecture}
-This chapter describes the software architectures for the front and back-end applications.
-It also covers what major frameworks are used and to what purpose.
+This chapter describes the software architectures for the front- and back-end applications.
+It also covers what major frameworks used and to what purpose.
 
 \section{Frameworks}
 The system is build with different frameworks as seen on figure  \ref{fig:frameworkArchitecture}.
 The front-end application uses \glsi{ng2} as the main framework.
-It utilizes \glsi{nativescript} as the \gls{ui} rendering layer and \glsi{graphql} as the back-end communication specification and \glsi{apollo:client} for request execution.
+It utilizes \glsi{nativescript} as the \gls{ui} rendering layer and \glsi{graphql} as the back-end communication specification and \glsi{apollo:client} as \glsi{graphql} implementation.
 
-The back-end uses the \glsi{apollo:server} framework to manage communications with the \glsi{graphql} specification and uses \glsi{mongodb} for data persistence.
+The back-end uses the \glsi{apollo:server} framework to manage communications with the \glsi{graphql} specification and uses \glsi{mongoose} as \gls{orm} connected to \glsi{mongodb} for data persistence.
 
 \graphic{1}{frameworkArchitecture}{System framework architecture}{fig:frameworkArchitecture}
 
@@ -45,9 +45,9 @@ export class LoginComponent implements OnInit {
 
 \subsection{Back-end}
 The back-end application is based on a three layer architecture, as seen on figure \ref{fig:backendArchitecture}.
-The \textit{Schema} layer handles \gls{api} exposure to clients and is written in \glsi{graphql} schema language.
+The \textit{Schema} layer handles \gls{api} exposure to clients and is written in the \glsi{graphql} schema language.
 The \textit{Resolvers} layer handles field resolvement for queries.
-This is where decisions on where data is to be fetched from is handled.
+This is where decisions on where data is to be fetched from are handled.
 The bottom layer is a service layer including data access and utility services.
 This includes database connections and other data access logic as well as e-mail services and data analysis algorithms.
 

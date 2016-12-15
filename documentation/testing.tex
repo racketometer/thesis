@@ -3,24 +3,36 @@ This chapter describes how testing is set up and managed a cross the application
 
 \section{Tools}
 The back-end and front-end both utilize the same tools for testing.
-\glsi{mocha} is the test-runner used for running the tests.
-\glsi{sinon} is used for spys, mocks and stubs. \glsi{chai} is used as the assertion library.
+\glsi{mocha} is the test-runner, \glsi{sinon} is used for mocking dependencies and \glsi{chai} is used as the assertion library.
 
-\glsi{istanbul} calculates coverage and \glsi{coveralls} posts it to their web service and adds the information to \glsi{github} in form of comments on pull-requests and as a badge for the master branch coverage.
+\glsi{istanbul} calculates code coverage and \glsi{coveralls} posts it to the \glsi{coveralls} web service and adds the information to \glsi{github} in form of comments on pull-requests and as a badge on the master branch.
 On pull-requests you also get information about coverage increase and decrease.
 
-Tests are also run on \glsi{travis}, see chapter \fxfatal{add ref to CI chapter}
+Tests are also run on \glsi{travis}, see section \ref{sec:ci}.
 
 \section{Running tests}
-The front-end and back-end uses the same commands for running tests and posting coverage.
-To run tests on the local development machine, environment variables need to be set before running the below command in the root of the specific projects folder, see section \fxfatal{add environment variable section ref}.
+The front-end and back-end uses the same commands for running tests and posting code coverage.
+To run tests on the local development machine, environment variables need to be set before running the below command in the root of the specific projects folder, see chapter \ref{ch:environmentVariables}.
 
-The following command will run all tests against the test database.
-The database is reseeded each time to ensure the same data is available. 
-Coverage results are output to the \verb+coverage+ folder.
+The following command will run all tests against the test database, which is reseeded on each run to ensure the same data is available.
+Code coverage results are output to the \verb+coverage+ folder.
 
-\verb+npm run test+
+\verb+npm test+
 
 To post the calculated code coverage to \glsi{coveralls} use the below command.
 
 \verb+npm run coverage+
+
+\section{Continuous integration}
+\label{sec:ci}
+Both repositories are connected to a \glsi{ci} server, \glsi{travis}.
+The tasks done by the server is configured in the \verb+.travis.yml+ file in the root of the repositories.
+
+For both repositories the source code is linted, build and tested.
+
+On the front-end, the \textit{Android} \glspl{sdk} are installed prior to running the afore mentioned tasks.
+
+On each commit to the repositories or when a pull-request is opened, a build is initiated.
+If the build fails, an email is send to the author of the commit.
+In the case of pull-requests, \glsi{travis} leaves an indication on \glsi{github} on the build status to make it easier for the reviewer.
+

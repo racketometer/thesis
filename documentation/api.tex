@@ -1,5 +1,5 @@
 \chapter{API documentation}
-This chapter will cover the documentation of the back-end \gls{api}.
+This chapter will cover the documentation of the back-end web \gls{api}.
 
 For reference of the \glsi{graphql} documentation \citep{graphql:typesystem} the following notations are used through out the documentation.
 
@@ -8,10 +8,8 @@ For reference of the \glsi{graphql} documentation \citep{graphql:typesystem} the
 \item \verb+[SomeType]+ Array of \verb+SomeType+
 \end{itemize}
 
-Resources on the \gls{api} are categorized in queries and mutations.
-A query is not able to change any data on the server, i.e. used solely to retrieve data.
-Mutations are the contrary.
-Requesting on a mutation might change data on the server.
+Resources on the \gls{api} are categorised in queries and mutations.
+A query is not able to change any data on the server, i.e. used solely to retrieve data, whereas mutations might change data on the server.
 
 Here follows descriptions of each resource found on the \gls{api} endpoint.
 The list below is an overview of the available resources.
@@ -40,8 +38,9 @@ The list below is an overview of the available resources.
 \section{Root}
 \label{sec:root}
 On figure \ref{fig:root} the two root types are shown. 
-These are \verb+Query+ and \verb+Mutation+. 
-\verb+Query+ can be compared to \gls{http} GET requests and \verb+Mutation+s can be considered as \gls{http} POST requests.
+These are \verb+Query+ and \verb+Mutation+.
+These are the entry points for any resources on the \gls{api}.
+
 \graphich{0.6}{api/rootType}{Root types}{fig:root}
 
 \section{Query}
@@ -49,17 +48,17 @@ These are \verb+Query+ and \verb+Mutation+.
 On figure \ref{fig:query} the \verb+Query+ root type is shown. It contains two fields. 
 
 The first field \verb+viewer+ is where the restricted data is located.
-It takes a \verb+token+ parameter, and returns a \verb+viewer+ type, which is shown, on figure \ref{fig:viewerType}.
+It takes a \verb+token+ parameter, and returns a \verb+Viewer+ type, which is shown, on figure \ref{fig:viewerType}.
 
-The second field \verb+login+ also returns a \verb+viewer+ type. 
+The second field \verb+login+ also returns a \verb+Viewer+ type. 
 This is to save a round trip.
-The viewer type has a \verb+token+ parameter that can be used to query the \verb+viewer+ field at a later time after logging in.
+The \verb+Viewer+ type has a \verb+token+ parameter that can be used to query the \verb+Viewer+ field at a later time after logging in.
 \graphich{0.6}{api/queryType}{The Query root type with fields}{fig:query}
 
 \section{Viewer}
 \label{sec:viewer}
 The \verb+Viewer+ can only be retrieved if the user is authenticated, either through the \verb+viewer+ field or the \verb+login+ field, on the root type \verb+query+. The \verb+Viewer+ is shown on figure \ref{fig:viewerType}
-\graphich{0.6}{api/viewerType}{The Query root type with fields}{fig:viewerType}
+\graphich{0.6}{api/viewerType}{The Viewer type with fields}{fig:viewerType}
 
 \section{Users}
 The \verb+users+ function is used to get users created by a specific user id. If no id is provided, the \verb+users+ created by the caller is returned. 
@@ -79,7 +78,7 @@ It returns a \verb+MutationViewer+ that is shown on figure \ref{fig:mutationView
 \graphich{0.6}{api/mutationType}{The Mutation root type with fields}{fig:mutationType}
 
 \section{MutationViewer}
-The \verb+MutationViewer+ has 3 functions that take arguments and a \verb+logout+ field that just needs to be required on the \verb+MutationViewer+ to be called. The \verb+MutationViewer+ can be seen on figure \ref{fig:mutationViewer}
+The \verb+MutationViewer+ has three functions that take arguments and a \verb+logout+ field that just needs to be requested to be executed. The \verb+MutationViewer+ can be seen on figure \ref{fig:mutationViewer}
 \graphich{0.6}{api/mutationViewerType}{The MutationViewer type with fields}{fig:mutationViewer}
 
 \subsection{CreateUser}
@@ -91,24 +90,24 @@ As shown on figure \ref{fig:createUser}, it only takes an \verb+email+ and a \ve
 \subsection{CreateAutoUser}
 \label{sec:createAutoUser}
 Consultants and coaches to create a user with an auto-generated password can use the \verb+createAutoUser+ function.
-The user then receives the password on the provided email.
+The user then receives the generated password on the provided email.
 It takes an \verb+AutoUser+ as an input parameter.
 \graphich{0.6}{api/createAutoUserType}{The createAutoUser function with arguments}{fig:createAutoUser}
 
 \subsection{AutoUser}
-\verb+AutoUser+ is an input type used by \verb+createAutoUser+ and can be seen on figure \ref{fig:autoUser}.
+This is an input type used by \verb+createAutoUser+ and can be seen on figure \ref{fig:autoUser}.
 \graphich{0.6}{api/autoUserInputType}{The AutoUser input type}{fig:autoUser}
 
 \subsection{ChangePassword}
 \label{sec:changePassword}
-\verb+changePassword+ can be used to change password at any time, as long as the old password is provided.
+\verb+changePassword+ can be used to change password.
 The \verb+changePassword+ function can be seen on figure \ref{fig:changePassword}
 \graphich{0.6}{api/changePasswordType}{The changePassword function with arguments}{fig:changePassword}
 
 \section{Interactive API exploration}
 When using \glsi{graphql}, \glsi{graphiql} is included.
 \Glsi{graphiql} is a live web documentation of the schema that can be used to browse the documentation and also query against the application.
-This is useful for both for the back-end developer that does not need to maintain an \gls{api} documentation and also for the front-end developer that can browse the schema live instead of referring to a hard copy, that might be out dated.
+This is useful for both for the back-end developer that does not need to maintain an \gls{api} documentation and also for the front-end developer that can browse the schema live instead of referring to a hard copy, that easily become out dated.
 
 An example of how you can use \glsi{graphiql} is shown on figure \ref{fig:graphiql}.
 The view is split into three columns.
@@ -119,10 +118,10 @@ To the right is the documentation explorer.
 The example shows a login query using \verb+email+ and \verb+password+ variables.
 When pushing the \textit{Play} button, the query is run and the response is shown with exactly the two parameters asked for, i.e. \verb+_id+ and \verb+token+.
 
-\Glsi{graphiql} for the running back-end is available on the following \gls{url}: \newline
+\Glsi{graphiql} for the running back-end is available on the following URL: \newline
 \url{https://polar-reef-40902.herokuapp.com/graphiql}
 
-Follow this \gls{url} for a prepared query setup: \newline
+Follow this URL for a prepared query setup: \newline
 \url{https://goo.gl/pQjOko}
 
 \graphic{1}{api/graphiql}{\Glsi{graphiql} web interface}{fig:graphiql}

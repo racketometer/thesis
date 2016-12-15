@@ -1,26 +1,25 @@
 \chapter{Deployment}
-This chapter describes how the applications are distributed and deployed and how the production systems are setup.
+This chapter describes how the applications are distributed and deployed and how the production systems are set up.
 
 \section{Deployment model}
 The software packages are deployed as a distributed system as shown on figure \ref{fig:deploymentModel}.
 The front-end codebase is compiled to native applications on the targeted platforms and deployed to the devices.
-The back-end codebase is deployed to a \glsi{heroku} infrastructure running \glsi{node} and is setup to communicate with a \glsi{mongodb} instance hosted on \glsi{mlab}, see section \ref{sec:staging}.
+The back-end codebase is deployed to a \glsi{heroku} infrastructure running \glsi{node} and is set up to communicate with a \glsi{mongodb} instance hosted on \glsi{mlab}, see section \ref{sec:staging}.
 
 \graphic{1}{deployment}{Software deployment model}{fig:deploymentModel}
 
 \section{Back-end}
-The back-end application is deployed on \glsi{heroku} with free hosting. 
-This is because the product is still in a beta state and the cheapest solution, i.e free, is chosen.
-
-When deploying a \glsi{node} application on \glsi{heroku}, you deploy your source code from a local git repository.
-\Glsi{heroku} then builds the application with \glsi{npm} scripts and starts the application on the running web instance as illustrated on \ref{fig:deploymentFlow}.
+When deploying a \glsi{node} application on \glsi{heroku}, you deploy the source code from a local \textit{Git} repository.
+\Glsi{heroku} then builds the application with \glsi{npm} scripts and starts the application on the running web instance as illustrated on figure \ref{fig:deploymentFlow}.
 
 \graphic{0.8}{deploymentFlow}{\Glsi{heroku} deployment flow}{fig:deploymentFlow}
 
 \subsection{Existing server}
-To deploy to the existing server push git changes to the \glsi{heroku} remote with the following command.
+To deploy to an existing server push \textit{Git} changes to the \glsi{heroku} remote with the following command.
 
 \verb+git push heroku master+
+
+This is only possible if the local setup previously has been configured as explained in section \ref{sec:deployment:new}.
 
 \subsection{New server}
 \label{sec:deployment:new}
@@ -31,27 +30,24 @@ To make sure that \glsi{npm} installs the developer dependencies, the \verb+NPM_
 
 \verb+heroku config:set NPM_CONFIG_PRODUCITON=false+
 
-\glsi{heroku} is configured with a \verb+Procfile+ \citep{documentation:deployment:heroku:procfile}, with the single command below. This defines how the web application is started.
+\Glsi{heroku} is configured with a \verb+Procfile+ \citep{documentation:deployment:heroku:procfile}, with the single command below. This defines how the web server application is started.
 
 \verb+web: node dist/server.js+
 
-If no \verb+Procfile+ is provided, \glsi{heroku} will run the \verb+npm start+ command.
-That command is used under development and runs a development server.
-Therefore a \verb+Procfile+ is provided to run a different command.
+If no \verb+Procfile+ is provided, \glsi{heroku} will default to the \verb+npm start+ command, which is used under development and runs a development server.
 
 To make sure that the source code gets compiled before the server starts, a \verb+postinstall+ script is added to the \verb+package.json+ file.
 This script will run the \glsi{webpack} build chain that compiles the \gls{typescript} code and outputs it to the \verb+dist+ folder.
 
 \subsection{Staging}
 \label{sec:staging}
-As the application uses staging for different environments, several environment variables need to be set.
-Specifically the \verb+NODE_ENV+ and the \verb+ROM_DB_PROD+ variable. 
-The \verb+NODE_ENV+ variable defines if a database seed should be applied on startup or not. 
+As the application uses staging for different environments, several environment variables need to be set, specifically the \verb+NODE_ENV+ and the \verb+ROM_DB_PROD+ variable. 
+The \verb+NODE_ENV+ variable defines if a database seed should be applied on start-up or not. 
 This is used on the testing stage so that integration tests are always run against the same data.
 
-In production we do not ever want to reseed our database and therefore the \verb+NODE_ENV+ variable is set to \verb+prod+.
+In production it is never desirable to reseed the database and therefore the \verb+NODE_ENV+ variable is set to \verb+prod+.
 
-Lastly \verb+ROM_DB_PROD+ needs to be set to the \gls{url} of the production \glsi{mongodb} instance.
-For a complete reference on environment variables see chapter \ref{ch:environmentVariables}.
+Lastly \verb+ROM_DB_PROD+ needs to be set to the URL of the production \glsi{mongodb} instance.
+For a complete reference on used environment variables see chapter \ref{ch:environmentVariables}.
 
-The \glsi{mongodb} for production is hosted on \glsi{mlab} as Database-as-a-Service web service.
+The \glsi{mongodb} for production is hosted on \glsi{mlab} a Database-as-a-Service web service.
