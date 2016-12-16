@@ -1,17 +1,17 @@
-\chapter{Security}
+\section{Security}
 This chapter describes the considerations and decisions taken to secure the back-end application from abuse.
 
-\section{Authentication}
+\subsection{Authentication}
 To make sure that malicious users cannot abuse the back-end application, it was decided to secure it through authentication. 
 There were two common options for how this could be handled. 
 
-\subsection{The common approach}
+\subsubsection{The common approach}
 This approach is to add a token of sorts to the header of the \gls{http} request. 
 The downside of this is the missing transparency of the \gls{api}.
 Headers are not immediately shown in the requests payloads and can hide the fact that authentication is necessary.
 Another downside is that the interactive \gls{api} explorer \glsi{graphiql} does not support setting \gls{http} headers.
 
-\subsection{The Facebook approach}
+\subsubsection{The Facebook approach}
 Facebook, Inc uses a root type called a \verb+viewer+ \citep{facebook:viewer}. 
 The \verb+viewer+ represent the user making the request and it can be used for several things. 
 What we did was to add a parameter on the root type \verb+viewer+ so that the \verb+viewer+ takes a token. 
@@ -49,7 +49,7 @@ When passing the token to the \verb+viewer+, it is checked in the database and t
 
 \graphic{0.6}{mutation}{\gls{api} documentation for the MutationViewer type}{fig:mutationViewer}
 
-\subsection{Token generation}
+\subsubsection{Token generation}
 The token is generated on login and removed on logout. 
 An \glsi{npm} package named \verb+node-uuid+ is used to generate an RFC4122 v4 \gls{uuid}, which is then stored with the user. 
 
