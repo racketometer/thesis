@@ -2,7 +2,24 @@
 This chapter defines the requirements for the project.
 The functional requirements are described with \glspli{userstory} with some additional conditions of satisfaction to increase the testable details and add non-functional requirements.
 
-\section*{User stories}
+\section{Actors}
+To get an overview of the users of the system, an actor context diagram is shown on figure \ref{fig:actor}.
+
+There are two primary actors consisting of \textit{athletes} and \textit{coaches}. 
+\textit{Coaches} have the ability to create \textit{athlete} accounts for its team and view all its created \textit{athlete} accounts.
+\textit{Coaches} can start sessions using the \textit{athlete} accounts.
+This gives clubs and \textit{coaches} the ability to buy the system with the purpose of monitoring their \textit{athletes}, without their \textit{athletes} having to buy the system.
+
+\textit{Athletes} can only start new sessions on their own account and does not have the ability to create new accounts.
+
+There is one secondary user; a \textit{consultant}.
+The \textit{consultant} have the same abilities as the coach. The major difference is that the \textit{consultant} can also create new coaches.
+The \textit{consultant} is a secondary user because he facilitates the use of the product.
+
+\graphich{0.8}{actor}{Actor context diagram}{fig:actor}
+
+\section{User stories}
+Here follows the user stories defining the requirements.
 
 \userstory{As a user, I want to use a phone or tablet to access the system}
 
